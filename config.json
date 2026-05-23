@@ -87,7 +87,7 @@
       "date": "2026-06-25",
       "kickoff": "2026-06-25T20:00:00Z",
       "enabled": true,
-      "price_ceilings": { "cat1": 600, "cat2": 500 },
+      "price_ceilings": { "cat1": 800, "cat2": 650 },
       "sites": {
         "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-group-e-ecuador-vs-germany-match-56-tickets-metlife-stadium-6-25-26-4pm/6259584/" },
         "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645" },
