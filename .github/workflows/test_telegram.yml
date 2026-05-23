@@ -14,26 +14,22 @@ jobs:
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "::error::Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID secret."
-            echo "Set them in Settings → Secrets and variables → Actions."
             exit 1
           fi
 
           response=$(curl -sS -w "\n%{http_code}" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=🧪 *WC '26 Monitor test ping*
-
-Telegram is wired up correctly. You'll get real alerts here when an under-cap listing appears for one of your 8 MetLife matches." \
+            --data-urlencode "text=🧪 WC '26 Monitor test ping — Telegram is wired up. Real alerts will come here when an under-cap listing appears for one of your 8 MetLife matches." \
             -d "parse_mode=Markdown")
 
           status=$(echo "$response" | tail -n1)
           body=$(echo "$response" | head -n -1)
-
           echo "HTTP $status"
           echo "$body"
 
           if [ "$status" != "200" ]; then
-            echo "::error::Telegram API returned $status — check secrets and that you've messaged the bot first."
+            echo "::error::Telegram API returned $status"
             exit 1
           fi
           echo "::notice::Test message sent. Check Telegram."
