@@ -127,7 +127,7 @@
       "date": "2026-06-30",
       "kickoff": "2026-07-01T01:30:00Z",
       "enabled": true,
-      "price_ceilings": { "cat1": 1000, "cat2": 700 },
+      "price_ceilings": { "cat1": 750, "cat2": 500 },
       "sites": {
         "tickpick":   { "enabled": false, "url": "" },
         "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-30-2026--sports-soccer/production/5080730" },
@@ -147,7 +147,7 @@
       "date": "2026-07-05",
       "kickoff": "2026-07-05T20:00:00Z",
       "enabled": true,
-      "price_ceilings": { "cat1": 1500, "cat2": 1000 },
+      "price_ceilings": { "cat1": 800, "cat2": 500 },
       "sites": {
         "tickpick":   { "enabled": false, "url": "" },
         "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851" },
@@ -167,7 +167,7 @@
       "date": "2026-07-19",
       "kickoff": "2026-07-19T19:00:00Z",
       "enabled": true,
-      "price_ceilings": { "cat1": 4000, "cat2": 2500 },
+      "price_ceilings": { "cat1": 1500, "cat2": 800 },
       "sites": {
         "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-final-match-104-tickets-metlife-stadium-7-19-26-3pm/6250040/" },
         "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877" },
