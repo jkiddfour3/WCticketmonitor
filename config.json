@@ -6,17 +6,16 @@
 
   "min_quantity": 2,
 
-  "fee_multipliers": {
-    "_comment": "Applied when a site doesn't already show all-in pricing.",
-    "TickPick": 1.00,
-    "Vivid Seats": 1.00,
-    "SeatGeek": 1.27,
-    "StubHub": 1.30,
-    "Viagogo": 1.28,
-    "Gametime": 1.00,
-    "SeatPick": 1.00,
-    "AXS": 1.18
-  },
+    "fee_multipliers": {
+     "TickPick": 1.00,
+     "Vivid Seats": 1.27,
+     "SeatGeek": 1.27,
+     "Gametime": 1.00,
+     "Viagogo": 1.32,
+     "AXS": 1.20,
+     "SeatPick": 1.20,
+     "StubHub": 1.32
+   },
 
   "matches": [
     {
