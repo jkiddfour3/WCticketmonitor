@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 """
-World Cup 2026 — MetLife Stadium multi-match ticket monitor (v3).
+World Cup 2026 — MetLife Stadium multi-match ticket monitor (v4, Playwright).
 
-Monitors ALL 8 MetLife matches: 5 group stage games, Round of 32, Round of 16,
-and the Final. Per-match price ceilings live in config.json.
-
-For each match, scrapes whichever sites have URLs configured (TickPick, Vivid
-Seats, AXS, SeatPick, SeatGeek, Gametime, Viagogo, StubHub), classifies seats
-into Cat 1/2 by section number, and:
-  - writes results.json (consumed by the dashboard UI)
-  - sends Telegram alerts for new under-ceiling listings, grouped by match
+Uses headless Chromium so JavaScript-rendered ticket sites actually return
+data. Slower than v3 (~5-7 min per run vs 30 sec) but produces real listings
+on TickPick, Vivid Seats, Gametime, SeatPick, and (sometimes) StubHub/Viagogo.
 """
 
 from __future__ import annotations
@@ -26,17 +21,15 @@ from pathlib import Path
 from typing import Optional
 
 import requests
+from playwright.sync_api import sync_playwright, Page, BrowserContext
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
 STATE_PATH = ROOT / "state.json"
 RESULTS_PATH = ROOT / "results.json"
 
-UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/124.0.0.0 Safari/537.36"
-)
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36")
 
 
 # ---------- config / state -------------------------------------------------
@@ -97,369 +90,192 @@ def classify(section: str) -> Optional[str]:
     return None
 
 
-# ---------- HTTP helper ----------------------------------------------------
+# ---------- network response captor ---------------------------------------
 
-def _get(url: str, headers: Optional[dict] = None, timeout: int = 25):
-    base = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
-    if headers:
-        base.update(headers)
-    try:
-        r = requests.get(url, headers=base, timeout=timeout)
-        if r.status_code != 200:
-            return None
-        return r
-    except requests.RequestException:
+class ResponseCaptor:
+    """Captures JSON responses during a page load. Site-specific filtering."""
+    def __init__(self, site_hint: str):
+        self.site_hint = site_hint
+        self.responses: list[dict] = []
+
+    def on_response(self, response):
+        try:
+            url = response.url
+            if response.status != 200:
+                return
+            ct = (response.headers or {}).get("content-type", "")
+            if "json" not in ct.lower():
+                return
+            url_l = url.lower()
+            keywords = ["listing", "ticket", "inventory", "offer", "production", "event/"]
+            if not any(k in url_l for k in keywords):
+                return
+            try:
+                body = response.json()
+            except Exception:
+                return
+            self.responses.append({"url": url, "body": body})
+        except Exception:
+            pass
+
+
+def _walk_for_items(node, keys_hint, depth=0, max_depth=8):
+    """Walk a JSON tree looking for a list of dicts that look like listings."""
+    if depth > max_depth:
         return None
+    if isinstance(node, list) and node and isinstance(node[0], dict):
+        keys = set()
+        for it in node[:5]:
+            if isinstance(it, dict):
+                keys.update(it.keys())
+        if any(k in keys for k in keys_hint):
+            return node
+    if isinstance(node, dict):
+        for v in node.values():
+            r = _walk_for_items(v, keys_hint, depth + 1, max_depth)
+            if r is not None:
+                return r
+    if isinstance(node, list):
+        for v in node:
+            r = _walk_for_items(v, keys_hint, depth + 1, max_depth)
+            if r is not None:
+                return r
+    return None
 
 
-# ---------- site scrapers --------------------------------------------------
+# ---------- per-site parsers ----------------------------------------------
 
-def fetch_tickpick(event_url: str):
-    out = []
-    m = re.search(r"/(\d{6,})/?", event_url)
-    if not m:
-        return out, {"status": "fail", "error": "bad URL"}
-    event_id = m.group(1)
-    api = f"https://www.tickpick.com/api/v3/listings/event/{event_id}/"
-    r = _get(api, headers={"Accept": "application/json", "Referer": event_url})
-    items = []
-    if r is not None:
-        try:
-            data = r.json()
-            items = data.get("listings", data) if isinstance(data, dict) else (data or [])
-        except ValueError:
-            items = []
-    if not items:
-        r = _get(event_url)
-        if r is None:
-            return out, {"status": "fail", "error": "fetch failed"}
-        blob = re.search(r'"listings"\s*:\s*(\[[^\]]*\])', r.text)
-        if blob:
+def parse_generic_listings(bodies, site_name, event_url, fees_included=False,
+                           section_keys=("section", "sectionName", "s"),
+                           row_keys=("row", "r"),
+                           qty_keys=("quantity", "q", "availableQuantity", "qty"),
+                           price_keys=("totalPrice", "currentPrice", "price", "p", "dp")):
+    listings = []
+    seen = set()
+    for resp in bodies:
+        items = _walk_for_items(resp["body"],
+                                set(section_keys) | set(price_keys) | {"id", "listingId"})
+        if not items:
+            continue
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            section = ""
+            for k in section_keys:
+                v = it.get(k)
+                if v:
+                    section = str(v)
+                    break
+            row = ""
+            for k in row_keys:
+                v = it.get(k)
+                if v:
+                    row = str(v)
+                    break
+            qty = 0
+            for k in qty_keys:
+                v = it.get(k)
+                if v:
+                    qty = v
+                    break
+            price = 0
+            for k in price_keys:
+                v = it.get(k)
+                if isinstance(v, dict):
+                    price = v.get("amount") or v.get("value") or 0
+                    if price:
+                        break
+                elif v:
+                    price = v
+                    break
             try:
-                items = json.loads(blob.group(1))
-            except json.JSONDecodeError:
-                items = []
-
-    for it in items:
-        section = it.get("s") or it.get("section") or ""
-        row = it.get("r") or it.get("row") or ""
-        qty = it.get("q") or it.get("quantity") or 0
-        price = it.get("p") or it.get("price") or it.get("currentPrice") or 0
-        lid = it.get("id") or f"{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("TickPick", str(section), str(row), qty_i, price_f, True, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
+                qty_i, price_f = int(qty), float(price)
+            except (TypeError, ValueError):
+                continue
+            if not section or price_f <= 0 or qty_i <= 0:
+                continue
+            lid = str(it.get("id") or it.get("listingId") or f"{section}-{row}-{price}")
+            sig = (section, row, qty_i, round(price_f, 2))
+            if sig in seen:
+                continue
+            seen.add(sig)
+            listings.append(Listing(site_name, section, row, qty_i, price_f,
+                                     fees_included, event_url, lid))
+    return listings
 
 
-def fetch_seatgeek(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed"}
-    html = r.text
-    blob = (re.search(r"window\.__INITIAL_STATE__\s*=\s*(\{.*?\});", html, re.DOTALL)
-            or re.search(r'"listings"\s*:\s*(\[.*?\])\s*,\s*"', html, re.DOTALL))
-    if not blob:
-        return out, {"status": "fail", "error": "no state block"}
-    try:
-        parsed = json.loads(blob.group(1))
-        items = parsed if isinstance(parsed, list) else (
-            parsed.get("listings") or parsed.get("event", {}).get("listings") or [])
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-
-    for it in items:
-        section = it.get("s") or it.get("section") or ""
-        row = it.get("r") or it.get("row") or ""
-        qty = it.get("q") or it.get("quantity") or 0
-        price = it.get("dp") or it.get("p") or it.get("price") or 0
-        lid = it.get("id") or f"sg-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("SeatGeek", str(section), str(row), qty_i, price_f, False, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-def fetch_vividseats(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed"}
-    html = r.text
-    items = []
-    for pattern in [r"__REDUX_STATE__\s*=\s*(\{.*?\})\s*</script>",
-                    r"__NEXT_DATA__[^>]*>\s*(\{.*?\})\s*</script>"]:
-        m = re.search(pattern, html, re.DOTALL)
-        if not m:
-            continue
-        try:
-            parsed = json.loads(m.group(1))
-        except json.JSONDecodeError:
-            continue
-        stack = [parsed]
-        while stack:
-            node = stack.pop()
-            if isinstance(node, list) and node and isinstance(node[0], dict) and any(
-                k in node[0] for k in ("section", "sectionName", "s")):
-                items = node
-                break
-            if isinstance(node, dict):
-                stack.extend(node.values())
-            elif isinstance(node, list):
-                stack.extend(node)
-        if items:
-            break
-
-    if not items:
-        m = re.search(r'"listings"\s*:\s*(\[.*?\])', html, re.DOTALL)
-        if m:
-            try:
-                items = json.loads(m.group(1))
-            except json.JSONDecodeError:
-                items = []
-
-    if not items:
-        return out, {"status": "fail", "error": "no listings"}
-
-    for it in items:
-        section = it.get("section") or it.get("sectionName") or it.get("s") or ""
-        row = it.get("row") or it.get("r") or ""
-        qty = it.get("quantity") or it.get("q") or 0
-        price = (it.get("totalPrice") or it.get("currentPrice") or
-                 it.get("price") or it.get("p") or 0)
-        lid = it.get("id") or it.get("listingId") or f"vs-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("Vivid Seats", str(section), str(row), qty_i, price_f, True, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-def fetch_gametime(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed"}
-    html = r.text
-    m = re.search(r"__NEXT_DATA__[^>]*>\s*(\{.*\})\s*</script>", html, re.DOTALL)
-    if not m:
-        return out, {"status": "fail", "error": "no next data"}
-    try:
-        parsed = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-    items = []
-    stack = [parsed]
-    while stack:
-        node = stack.pop()
-        if isinstance(node, list) and node and isinstance(node[0], dict) and any(
-            k in node[0] for k in ("section", "sectionName", "row")):
-            items = node
-            break
-        if isinstance(node, dict):
-            stack.extend(node.values())
-        elif isinstance(node, list):
-            stack.extend(node)
-    if not items:
-        return out, {"status": "ok", "count": 0}
-    for it in items:
-        section = it.get("section") or it.get("sectionName") or ""
-        row = it.get("row") or ""
-        qty = it.get("quantity") or it.get("availableQuantity") or 0
-        price = it.get("totalPrice") or it.get("price") or 0
-        lid = it.get("id") or f"gt-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("Gametime", str(section), str(row), qty_i, price_f, True, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-def fetch_viagogo(event_url: str):
-    out = []
-    r = _get(event_url, headers={"Accept": "text/html"})
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed (likely anti-bot)"}
-    html = r.text
-    m = re.search(r'"Listings"\s*:\s*(\[.*?\])\s*,\s*"', html, re.DOTALL)
-    if not m:
-        m = re.search(r'"listings"\s*:\s*(\[.*?\])\s*,', html, re.DOTALL)
-    if not m:
-        return out, {"status": "fail", "error": "no listings block"}
-    try:
-        items = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-
-    for it in items:
-        section = it.get("SectionName") or it.get("section") or ""
-        row = it.get("Row") or it.get("row") or ""
-        qty = it.get("Quantity") or it.get("quantity") or 0
-        price = it.get("Price") or it.get("price") or 0
-        lid = it.get("Id") or it.get("id") or f"vg-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("Viagogo", str(section), str(row), qty_i, price_f, False, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-def fetch_axs(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed"}
-    html = r.text
-    m = re.search(r'"resaleListings"\s*:\s*(\[.*?\])', html, re.DOTALL)
-    if not m:
-        m = re.search(r'"listings"\s*:\s*(\[.*?\])', html, re.DOTALL)
-    if not m:
-        return out, {"status": "ok", "count": 0}
-    try:
-        items = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-    for it in items:
-        section = it.get("section") or it.get("sectionName") or ""
-        row = it.get("row") or ""
-        qty = it.get("quantity") or 0
-        price = it.get("price") or it.get("totalPrice") or 0
-        lid = it.get("id") or f"axs-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("AXS", str(section), str(row), qty_i, price_f, False, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-def fetch_seatpick(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "fetch failed"}
-    html = r.text
-    m = re.search(r'"listings"\s*:\s*(\[.*?\])', html, re.DOTALL)
-    if not m:
-        m = re.search(r'"tickets"\s*:\s*(\[.*?\])', html, re.DOTALL)
-    if not m:
-        return out, {"status": "ok", "count": 0}
-    try:
-        items = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-    for it in items:
-        section = it.get("section") or ""
-        row = it.get("row") or ""
-        qty = it.get("quantity") or it.get("qty") or 0
-        price = it.get("price") or it.get("totalPrice") or 0
-        lid = it.get("id") or f"sp-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("SeatPick", str(section), str(row), qty_i, price_f, True, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out), "agg": True}
-
-
-def fetch_stubhub(event_url: str):
-    out = []
-    r = _get(event_url)
-    if r is None:
-        return out, {"status": "fail", "error": "anti-bot blocked"}
-    html = r.text
-    m = re.search(r'"listings"\s*:\s*(\[.*?\])', html, re.DOTALL)
-    if not m:
-        return out, {"status": "fail", "error": "no listings (likely cloaked)"}
-    try:
-        items = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return out, {"status": "fail", "error": "json parse"}
-    for it in items:
-        section = it.get("sectionName") or it.get("section") or ""
-        row = it.get("row") or ""
-        qty = it.get("quantity") or 0
-        cp = it.get("currentPrice")
-        price = cp.get("amount") if isinstance(cp, dict) else (it.get("price") or 0)
-        lid = it.get("id") or f"sh-{section}-{row}-{price}"
-        try:
-            qty_i, price_f = int(qty), float(price or 0)
-        except (TypeError, ValueError):
-            continue
-        if not section or price_f <= 0 or qty_i <= 0:
-            continue
-        out.append(Listing("StubHub", str(section), str(row), qty_i, price_f, False, event_url, str(lid)))
-    return out, {"status": "ok", "count": len(out)}
-
-
-SCRAPERS = {
-    "tickpick":   fetch_tickpick,
-    "seatgeek":   fetch_seatgeek,
-    "vividseats": fetch_vividseats,
-    "gametime":   fetch_gametime,
-    "viagogo":    fetch_viagogo,
-    "axs":        fetch_axs,
-    "seatpick":   fetch_seatpick,
-    "stubhub":    fetch_stubhub,
+SITE_PARSE_CFG = {
+    "tickpick":   {"display": "TickPick",    "fees_inc": True},
+    "vividseats": {"display": "Vivid Seats", "fees_inc": True},
+    "seatgeek":   {"display": "SeatGeek",    "fees_inc": False},
+    "gametime":   {"display": "Gametime",    "fees_inc": True},
+    "viagogo":    {"display": "Viagogo",     "fees_inc": False},
+    "axs":        {"display": "AXS",         "fees_inc": False},
+    "seatpick":   {"display": "SeatPick",    "fees_inc": True},
+    "stubhub":    {"display": "StubHub",     "fees_inc": False},
 }
 
-SITE_DISPLAY = {
-    "tickpick": "TickPick", "seatgeek": "SeatGeek", "vividseats": "Vivid Seats",
-    "gametime": "Gametime", "viagogo": "Viagogo", "axs": "AXS",
-    "seatpick": "SeatPick", "stubhub": "StubHub",
-}
+
+# ---------- single-page scrape via Playwright -----------------------------
+
+def scrape_site(context: BrowserContext, site_key: str, event_url: str):
+    """Open the URL in a fresh page, capture API responses, parse listings."""
+    cfg = SITE_PARSE_CFG.get(site_key)
+    if not cfg:
+        return [], {"status": "fail", "error": "no parser config"}
+
+    page = context.new_page()
+    captor = ResponseCaptor(site_key)
+    page.on("response", captor.on_response)
+
+    try:
+        page.goto(event_url, wait_until="domcontentloaded", timeout=30000)
+        try:
+            page.wait_for_load_state("networkidle", timeout=15000)
+        except Exception:
+            pass
+        page.wait_for_timeout(2500)
+    except Exception as e:
+        page.close()
+        return [], {"status": "fail", "error": f"navigation: {str(e)[:80]}"}
+
+    page.close()
+
+    if not captor.responses:
+        return [], {"status": "fail", "error": "no JSON responses captured"}
+
+    listings = parse_generic_listings(
+        captor.responses, cfg["display"], event_url, fees_included=cfg["fees_inc"]
+    )
+    if not listings:
+        return [], {"status": "ok",
+                    "count": 0,
+                    "error": f"captured {len(captor.responses)} responses, no listings parsed"}
+    return listings, {"status": "ok", "count": len(listings)}
 
 
 # ---------- per-match scan -------------------------------------------------
 
-def scan_match(match: dict) -> tuple[list[Listing], dict]:
-    """Returns (listings, sites_status) for one match."""
+def scan_match(context: BrowserContext, match: dict):
     listings: list[Listing] = []
     sites_status: dict = {}
-    for site_name, site_cfg in match.get("sites", {}).items():
-        scraper = SCRAPERS.get(site_name)
-        if scraper is None:
-            sites_status[site_name] = {"status": "fail", "error": "no scraper"}
-            continue
+    for site_key, site_cfg in match.get("sites", {}).items():
         if not site_cfg.get("enabled", False) or not site_cfg.get("url"):
-            sites_status[site_name] = {"status": "fail", "error": "disabled or no URL"}
+            sites_status[site_key] = {"status": "fail", "error": "disabled or no URL"}
             continue
         try:
-            site_listings, status = scraper(site_cfg["url"])
+            site_listings, status = scrape_site(context, site_key, site_cfg["url"])
             listings += site_listings
-            sites_status[site_name] = status
+            sites_status[site_key] = status
         except Exception as e:
             traceback.print_exc(limit=1)
-            sites_status[site_name] = {"status": "fail", "error": str(e)[:80]}
+            sites_status[site_key] = {"status": "fail", "error": str(e)[:80]}
     return listings, sites_status
 
 
 # ---------- matching -------------------------------------------------------
 
-def find_matches_for(listings: list[Listing], ceilings: dict, fee_multipliers: dict, min_qty: int):
-    """Return list of (listing, category, all_in_price) tuples under the ceilings."""
+def find_matches_for(listings, ceilings, fee_multipliers, min_qty):
     out = []
     cat1_cap = float(ceilings["cat1"])
     cat2_cap = float(ceilings["cat2"])
@@ -499,7 +315,7 @@ def send_telegram(text: str, config: dict) -> bool:
         return False
 
 
-def format_alert(by_match: list[tuple[dict, list[tuple]]], max_per_match: int = 3) -> str:
+def format_alert(by_match, max_per_match: int = 3) -> str:
     lines = ["🚨 *WC '26 TICKET MATCH*", ""]
     for match, hits in by_match:
         if not hits:
@@ -518,41 +334,33 @@ def format_alert(by_match: list[tuple[dict, list[tuple]]], max_per_match: int = 
 
 # ---------- results.json --------------------------------------------------
 
-def serialize_match(match: dict, listings: list[Listing], sites_status: dict,
-                    fee_multipliers: dict, min_qty: int) -> dict:
-    """Convert a match's listings into the dashboard-friendly format."""
+def serialize_match(match, listings, sites_status, fees, min_qty):
     serialized = []
     for l in listings:
         cat = classify(l.section)
         if cat is None or l.qty < min_qty:
             continue
         serialized.append({
-            "site": l.site,
-            "section": l.section,
-            "row": l.row,
-            "qty": l.qty,
+            "site": l.site, "section": l.section, "row": l.row, "qty": l.qty,
             "price_each": round(l.price_each, 2),
-            "all_in": l.all_in(fee_multipliers.get(l.site, 1.0)),
-            "category": cat,
-            "url": l.url,
+            "all_in": l.all_in(fees.get(l.site, 1.0)),
+            "category": cat, "url": l.url,
             "fingerprint": l.fingerprint(match["id"]),
         })
     serialized.sort(key=lambda x: x["all_in"])
 
     return {
-        "id": match["id"],
-        "label": match["label"],
-        "match_no": match.get("match_no"),
-        "stage": match.get("stage"),
-        "date": match.get("date"),
-        "kickoff": match.get("kickoff"),
+        "id": match["id"], "label": match["label"],
+        "match_no": match.get("match_no"), "stage": match.get("stage"),
+        "date": match.get("date"), "kickoff": match.get("kickoff"),
         "ceilings": match["price_ceilings"],
-        "sites": {SITE_DISPLAY.get(k, k): v for k, v in sites_status.items()},
+        "sites": {SITE_PARSE_CFG.get(k, {}).get("display", k): v
+                  for k, v in sites_status.items()},
         "listings": serialized,
     }
 
 
-def write_results(matches_payload: list[dict]):
+def write_results(matches_payload):
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "venue": "MetLife Stadium",
@@ -560,8 +368,8 @@ def write_results(matches_payload: list[dict]):
         "matches": matches_payload,
     }
     RESULTS_PATH.write_text(json.dumps(payload, indent=2))
-    print(f"  wrote results.json — {len(matches_payload)} matches, "
-          f"{sum(len(m['listings']) for m in matches_payload)} total listings")
+    total = sum(len(m["listings"]) for m in matches_payload)
+    print(f"  wrote results.json — {len(matches_payload)} matches, {total} total listings")
 
 
 # ---------- main -----------------------------------------------------------
@@ -573,34 +381,59 @@ def main() -> int:
     min_qty = int(config.get("min_quantity", 2))
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    print(f"[{now}] scanning all MetLife matches...")
+    print(f"[{now}] launching browser...")
 
     matches_payload = []
     all_alerts: list[tuple[dict, list]] = []
 
-    for match in config.get("matches", []):
-        if not match.get("enabled", True):
-            print(f"  ~ skipping {match['label']} (disabled)")
-            continue
-        print(f"  > {match['label']} ({match['date']})")
-        listings, sites_status = scan_match(match)
-        for site, st in sites_status.items():
-            print(f"      {site}: {st.get('status')} {st.get('count', '')}".rstrip())
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        context = browser.new_context(
+            user_agent=UA,
+            viewport={"width": 1280, "height": 800},
+            locale="en-US",
+            timezone_id="America/New_York",
+        )
+        context.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+        )
 
-        payload = serialize_match(match, listings, sites_status, fees, min_qty)
-        matches_payload.append(payload)
+        for match in config.get("matches", []):
+            if not match.get("enabled", True):
+                print(f"  ~ skip {match['label']} (disabled)")
+                continue
+            print(f"  > {match['label']} ({match['date']})")
+            try:
+                listings, sites_status = scan_match(context, match)
+            except Exception as e:
+                print(f"    ! match-level exception: {e}")
+                sites_status = {"error": {"status": "fail", "error": str(e)[:80]}}
+                listings = []
 
-        hits = find_matches_for(listings, match["price_ceilings"], fees, min_qty)
-        if hits:
-            print(f"      ✓ {len(hits)} under-ceiling")
-            all_alerts.append((match, hits))
+            for site, st in sites_status.items():
+                count = st.get("count", "")
+                err = f" err={st['error']}" if st.get("error") and st.get("status") == "fail" else ""
+                print(f"      {site}: {st.get('status')} {count}{err}".rstrip())
+
+            payload = serialize_match(match, listings, sites_status, fees, min_qty)
+            matches_payload.append(payload)
+
+            hits = find_matches_for(listings, match["price_ceilings"], fees, min_qty)
+            if hits:
+                print(f"      ✓ {len(hits)} under-ceiling")
+                all_alerts.append((match, hits))
+
+        context.close()
+        browser.close()
 
     write_results(matches_payload)
 
     alerted = set(state.get("alerted", []))
     new_by_match: list[tuple[dict, list]] = []
     all_new_fingerprints = set()
-
     for match, hits in all_alerts:
         new_hits = []
         for l, cat, all_in in hits:
@@ -617,8 +450,7 @@ def main() -> int:
 
     print(f"  🚨 alerting on {sum(len(h) for _, h in new_by_match)} new listings "
           f"across {len(new_by_match)} matches")
-    msg = format_alert(new_by_match)
-    if send_telegram(msg, config):
+    if send_telegram(format_alert(new_by_match), config):
         alerted.update(all_new_fingerprints)
         state["alerted"] = list(alerted)[-1000:]
         state["last_alert_at"] = now

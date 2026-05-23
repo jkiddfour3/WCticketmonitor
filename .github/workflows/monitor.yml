@@ -2,7 +2,7 @@ name: WC Ticket Monitor
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,6 +27,16 @@ jobs:
           cache: pip
 
       - run: pip install -r requirements.txt
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-${{ runner.os }}-chromium-v1
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
 
       - name: Restore dedup state
         uses: actions/cache/restore@v4
@@ -60,4 +70,4 @@ jobs:
           else
             git commit -m "update results.json [skip ci]"
             git push
-          fi  
+          fi
