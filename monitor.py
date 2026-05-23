@@ -206,14 +206,38 @@ def parse_generic_listings(bodies, site_name, event_url, fees_included=False,
 
 SITE_PARSE_CFG = {
     "tickpick":   {"display": "TickPick",    "fees_inc": True},
-    "vividseats": {"display": "Vivid Seats", "fees_inc": True},
+    "vividseats": {"display": "Vivid Seats", "fees_inc": False},
     "seatgeek":   {"display": "SeatGeek",    "fees_inc": False},
     "gametime":   {"display": "Gametime",    "fees_inc": True},
     "viagogo":    {"display": "Viagogo",     "fees_inc": False},
     "axs":        {"display": "AXS",         "fees_inc": False},
-    "seatpick":   {"display": "SeatPick",    "fees_inc": True},
+    "seatpick":   {"display": "SeatPick",    "fees_inc": False},
     "stubhub":    {"display": "StubHub",     "fees_inc": False},
 }
+
+
+# Default fee multipliers per site (used if config.json's fee_multipliers omits them).
+# Update these to reflect what each marketplace actually charges in fees.
+DEFAULT_FEE_MULTIPLIERS = {
+    "TickPick":    1.00,   # advertises all-in pricing
+    "Vivid Seats": 1.27,   # ~25-27% service + delivery fees
+    "SeatGeek":    1.27,
+    "Gametime":    1.00,   # advertises all-in pricing
+    "Viagogo":     1.32,
+    "AXS":         1.20,
+    "SeatPick":    1.20,
+    "StubHub":     1.32,
+}
+
+
+def effective_fee_mult(site_display: str, config_fees: dict) -> float:
+    """Resolve the fee multiplier for a site: config.json wins, then defaults, then 1.0."""
+    if site_display in config_fees:
+        try:
+            return float(config_fees[site_display])
+        except (TypeError, ValueError):
+            pass
+    return DEFAULT_FEE_MULTIPLIERS.get(site_display, 1.0)
 
 
 # ---------- single-page scrape via Playwright -----------------------------
@@ -283,7 +307,7 @@ def find_matches_for(listings, ceilings, fee_multipliers, min_qty):
         cat = classify(l.section)
         if cat is None or l.qty < min_qty:
             continue
-        all_in = l.all_in(fee_multipliers.get(l.site, 1.0))
+        all_in = l.all_in(effective_fee_mult(l.site, fee_multipliers))
         cap = cat1_cap if cat == "Cat 1" else cat2_cap
         if all_in > cap:
             continue
@@ -343,7 +367,7 @@ def serialize_match(match, listings, sites_status, fees, min_qty):
         serialized.append({
             "site": l.site, "section": l.section, "row": l.row, "qty": l.qty,
             "price_each": round(l.price_each, 2),
-            "all_in": l.all_in(fees.get(l.site, 1.0)),
+            "all_in": l.all_in(effective_fee_mult(l.site, fees)),
             "category": cat, "url": l.url,
             "fingerprint": l.fingerprint(match["id"]),
         })
@@ -373,90 +397,3 @@ def write_results(matches_payload):
 
 
 # ---------- main -----------------------------------------------------------
-
-def main() -> int:
-    config = load_config()
-    state = load_state()
-    fees = config.get("fee_multipliers", {})
-    min_qty = int(config.get("min_quantity", 2))
-
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    print(f"[{now}] launching browser...")
-
-    matches_payload = []
-    all_alerts: list[tuple[dict, list]] = []
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
-        context = browser.new_context(
-            user_agent=UA,
-            viewport={"width": 1280, "height": 800},
-            locale="en-US",
-            timezone_id="America/New_York",
-        )
-        context.add_init_script(
-            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
-        )
-
-        for match in config.get("matches", []):
-            if not match.get("enabled", True):
-                print(f"  ~ skip {match['label']} (disabled)")
-                continue
-            print(f"  > {match['label']} ({match['date']})")
-            try:
-                listings, sites_status = scan_match(context, match)
-            except Exception as e:
-                print(f"    ! match-level exception: {e}")
-                sites_status = {"error": {"status": "fail", "error": str(e)[:80]}}
-                listings = []
-
-            for site, st in sites_status.items():
-                count = st.get("count", "")
-                err = f" err={st['error']}" if st.get("error") and st.get("status") == "fail" else ""
-                print(f"      {site}: {st.get('status')} {count}{err}".rstrip())
-
-            payload = serialize_match(match, listings, sites_status, fees, min_qty)
-            matches_payload.append(payload)
-
-            hits = find_matches_for(listings, match["price_ceilings"], fees, min_qty)
-            if hits:
-                print(f"      ✓ {len(hits)} under-ceiling")
-                all_alerts.append((match, hits))
-
-        context.close()
-        browser.close()
-
-    write_results(matches_payload)
-
-    alerted = set(state.get("alerted", []))
-    new_by_match: list[tuple[dict, list]] = []
-    all_new_fingerprints = set()
-    for match, hits in all_alerts:
-        new_hits = []
-        for l, cat, all_in in hits:
-            fp = l.fingerprint(match["id"])
-            if fp not in alerted:
-                new_hits.append((l, cat, all_in))
-                all_new_fingerprints.add(fp)
-        if new_hits:
-            new_by_match.append((match, new_hits))
-
-    if not new_by_match:
-        print("  no new under-ceiling listings to alert")
-        return 0
-
-    print(f"  🚨 alerting on {sum(len(h) for _, h in new_by_match)} new listings "
-          f"across {len(new_by_match)} matches")
-    if send_telegram(format_alert(new_by_match), config):
-        alerted.update(all_new_fingerprints)
-        state["alerted"] = list(alerted)[-1000:]
-        state["last_alert_at"] = now
-        save_state(state)
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
