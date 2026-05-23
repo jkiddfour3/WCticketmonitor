@@ -397,3 +397,90 @@ def write_results(matches_payload):
 
 
 # ---------- main -----------------------------------------------------------
+
+def main() -> int:
+    config = load_config()
+    state = load_state()
+    fees = config.get("fee_multipliers", {})
+    min_qty = int(config.get("min_quantity", 2))
+
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    print(f"[{now}] launching browser...")
+
+    matches_payload = []
+    all_alerts: list[tuple[dict, list]] = []
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        context = browser.new_context(
+            user_agent=UA,
+            viewport={"width": 1280, "height": 800},
+            locale="en-US",
+            timezone_id="America/New_York",
+        )
+        context.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+        )
+
+        for match in config.get("matches", []):
+            if not match.get("enabled", True):
+                print(f"  ~ skip {match['label']} (disabled)")
+                continue
+            print(f"  > {match['label']} ({match['date']})")
+            try:
+                listings, sites_status = scan_match(context, match)
+            except Exception as e:
+                print(f"    ! match-level exception: {e}")
+                sites_status = {"error": {"status": "fail", "error": str(e)[:80]}}
+                listings = []
+
+            for site, st in sites_status.items():
+                count = st.get("count", "")
+                err = f" err={st['error']}" if st.get("error") and st.get("status") == "fail" else ""
+                print(f"      {site}: {st.get('status')} {count}{err}".rstrip())
+
+            payload = serialize_match(match, listings, sites_status, fees, min_qty)
+            matches_payload.append(payload)
+
+            hits = find_matches_for(listings, match["price_ceilings"], fees, min_qty)
+            if hits:
+                print(f"      ✓ {len(hits)} under-ceiling")
+                all_alerts.append((match, hits))
+
+        context.close()
+        browser.close()
+
+    write_results(matches_payload)
+
+    alerted = set(state.get("alerted", []))
+    new_by_match: list[tuple[dict, list]] = []
+    all_new_fingerprints = set()
+    for match, hits in all_alerts:
+        new_hits = []
+        for l, cat, all_in in hits:
+            fp = l.fingerprint(match["id"])
+            if fp not in alerted:
+                new_hits.append((l, cat, all_in))
+                all_new_fingerprints.add(fp)
+        if new_hits:
+            new_by_match.append((match, new_hits))
+
+    if not new_by_match:
+        print("  no new under-ceiling listings to alert")
+        return 0
+
+    print(f"  🚨 alerting on {sum(len(h) for _, h in new_by_match)} new listings "
+          f"across {len(new_by_match)} matches")
+    if send_telegram(format_alert(new_by_match), config):
+        alerted.update(all_new_fingerprints)
+        state["alerted"] = list(alerted)[-1000:]
+        state["last_alert_at"] = now
+        save_state(state)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
