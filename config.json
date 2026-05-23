@@ -1,0 +1,183 @@
+{
+  "_comment": "WC2026 MetLife multi-match ticket monitor — all 8 matches at MetLife Stadium",
+
+  "telegram_bot_token": "",
+  "telegram_chat_id": "",
+
+  "min_quantity": 2,
+
+  "fee_multipliers": {
+    "_comment": "Applied when a site doesn't already show all-in pricing.",
+    "TickPick": 1.00,
+    "Vivid Seats": 1.00,
+    "SeatGeek": 1.27,
+    "StubHub": 1.30,
+    "Viagogo": 1.28,
+    "Gametime": 1.00,
+    "SeatPick": 1.00,
+    "AXS": 1.18
+  },
+
+  "matches": [
+    {
+      "id": "m07_bra_mar",
+      "label": "Brazil vs Morocco",
+      "match_no": 7,
+      "stage": "Group C",
+      "date": "2026-06-13",
+      "kickoff": "2026-06-13T22:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 700, "cat2": 500 },
+      "sites": {
+        "tickpick":   { "enabled": false, "url": "" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-13-2026--sports-soccer/production/5080443" },
+        "axs":        { "enabled": true,  "url": "https://www.axs.com/events/882558/brazil-vs-morocco-world-cup-match-7-group-c-tickets" },
+        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/brazil-vs-morocco-world-cup-tickets" },
+        "seatgeek":   { "enabled": false, "url": "https://seatgeek.com/fifa-world-cup-tickets/international-soccer/2026-06-13-6-pm/17269669" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "https://www.stubhub.com/world-cup-east-rutherford-tickets-6-13-2026/event/153021803/" }
+      }
+    },
+    {
+      "id": "m17_fra_sen",
+      "label": "France vs Senegal",
+      "match_no": 17,
+      "stage": "Group I",
+      "date": "2026-06-16",
+      "kickoff": "2026-06-16T19:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 600, "cat2": 450 },
+      "sites": {
+        "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-group-i-france-vs-senegal-match-17-tickets-metlife-stadium-6-16-26-3pm/6259581/" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/france-vs-senegal-world-cup-tickets" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m41_nor_sen",
+      "label": "Norway vs Senegal",
+      "match_no": 41,
+      "stage": "Group I",
+      "date": "2026-06-22",
+      "kickoff": "2026-06-23T00:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 500, "cat2": 350 },
+      "sites": {
+        "tickpick":   { "enabled": false, "url": "" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/norway-vs-senegal-world-cup-tickets" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m56_ecu_ger",
+      "label": "Ecuador vs Germany",
+      "match_no": 56,
+      "stage": "Group E",
+      "date": "2026-06-25",
+      "kickoff": "2026-06-25T20:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 600, "cat2": 500 },
+      "sites": {
+        "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-group-e-ecuador-vs-germany-match-56-tickets-metlife-stadium-6-25-26-4pm/6259584/" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645" },
+        "axs":        { "enabled": true,  "url": "https://www.axs.com/events/882463/ecuador-vs-germany-world-cup-match-56-group-e-tickets" },
+        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/ecuador-vs-germany-world-cup-tickets" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m67_pan_eng",
+      "label": "Panama vs England",
+      "match_no": 67,
+      "stage": "Group L",
+      "date": "2026-06-27",
+      "kickoff": "2026-06-27T21:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 700, "cat2": 500 },
+      "sites": {
+        "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-group-l-panama-vs-england-match-67-tickets-metlife-stadium-6-27-26-5pm/6259585/" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/panama-vs-england-world-cup-tickets" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m77_round_of_32",
+      "label": "Round of 32 — TBD vs TBD",
+      "match_no": 77,
+      "stage": "Round of 32",
+      "date": "2026-06-30",
+      "kickoff": "2026-07-01T01:30:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 1000, "cat2": 700 },
+      "sites": {
+        "tickpick":   { "enabled": false, "url": "" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-30-2026--sports-soccer/production/5080730" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": false, "url": "" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m91_round_of_16",
+      "label": "Round of 16 — TBD vs TBD",
+      "match_no": 91,
+      "stage": "Round of 16",
+      "date": "2026-07-05",
+      "kickoff": "2026-07-05T20:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 1500, "cat2": 1000 },
+      "sites": {
+        "tickpick":   { "enabled": false, "url": "" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": false, "url": "" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    },
+    {
+      "id": "m104_final",
+      "label": "FINAL — TBD vs TBD",
+      "match_no": 104,
+      "stage": "Final",
+      "date": "2026-07-19",
+      "kickoff": "2026-07-19T19:00:00Z",
+      "enabled": true,
+      "price_ceilings": { "cat1": 4000, "cat2": 2500 },
+      "sites": {
+        "tickpick":   { "enabled": true,  "url": "https://www.tickpick.com/buy-fifa-world-cup-26-final-match-104-tickets-metlife-stadium-7-19-26-3pm/6250040/" },
+        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877" },
+        "axs":        { "enabled": false, "url": "" },
+        "seatpick":   { "enabled": false, "url": "" },
+        "seatgeek":   { "enabled": false, "url": "" },
+        "gametime":   { "enabled": false, "url": "" },
+        "viagogo":    { "enabled": false, "url": "" },
+        "stubhub":    { "enabled": false, "url": "" }
+      }
+    }
+  ]
+}

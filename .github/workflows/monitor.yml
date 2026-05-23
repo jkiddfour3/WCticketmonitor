@@ -1,0 +1,63 @@
+name: WC Ticket Monitor
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wc-monitor
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore dedup state
+        uses: actions/cache/restore@v4
+        with:
+          path: state.json
+          key: wc-monitor-state-${{ github.run_id }}
+          restore-keys: |
+            wc-monitor-state-
+
+      - name: Run monitor
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python monitor.py
+
+      - name: Save dedup state
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: state.json
+          key: wc-monitor-state-${{ github.run_id }}
+
+      - name: Commit results.json back to repo
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results.json
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "update results.json [skip ci]"
+            git push
+          fi  
