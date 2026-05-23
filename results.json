@@ -1,0 +1,383 @@
+{
+  "updated_at": "2026-05-23T21:31:14+00:00",
+  "venue": "MetLife Stadium",
+  "venue_label": "New York New Jersey Stadium",
+  "matches": [
+    {
+      "id": "m07_bra_mar",
+      "label": "Brazil vs Morocco",
+      "match_no": 7,
+      "stage": "Group C",
+      "date": "2026-06-13",
+      "kickoff": "2026-06-13T22:00:00Z",
+      "ceilings": {
+        "cat1": 700,
+        "cat2": 500
+      },
+      "sites": {
+        "TickPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m17_fra_sen",
+      "label": "France vs Senegal",
+      "match_no": 17,
+      "stage": "Group I",
+      "date": "2026-06-16",
+      "kickoff": "2026-06-16T19:00:00Z",
+      "ceilings": {
+        "cat1": 600,
+        "cat2": 450
+      },
+      "sites": {
+        "TickPick": {
+          "status": "ok",
+          "count": 0
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m41_nor_sen",
+      "label": "Norway vs Senegal",
+      "match_no": 41,
+      "stage": "Group I",
+      "date": "2026-06-22",
+      "kickoff": "2026-06-23T00:00:00Z",
+      "ceilings": {
+        "cat1": 500,
+        "cat2": 350
+      },
+      "sites": {
+        "TickPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m56_ecu_ger",
+      "label": "Ecuador vs Germany",
+      "match_no": 56,
+      "stage": "Group E",
+      "date": "2026-06-25",
+      "kickoff": "2026-06-25T20:00:00Z",
+      "ceilings": {
+        "cat1": 600,
+        "cat2": 500
+      },
+      "sites": {
+        "TickPick": {
+          "status": "ok",
+          "count": 0
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m67_pan_eng",
+      "label": "Panama vs England",
+      "match_no": 67,
+      "stage": "Group L",
+      "date": "2026-06-27",
+      "kickoff": "2026-06-27T21:00:00Z",
+      "ceilings": {
+        "cat1": 700,
+        "cat2": 500
+      },
+      "sites": {
+        "TickPick": {
+          "status": "ok",
+          "count": 0
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "fetch failed"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m77_round_of_32",
+      "label": "Round of 32 \u2014 TBD vs TBD",
+      "match_no": 77,
+      "stage": "Round of 32",
+      "date": "2026-06-30",
+      "kickoff": "2026-07-01T01:30:00Z",
+      "ceilings": {
+        "cat1": 1000,
+        "cat2": 700
+      },
+      "sites": {
+        "TickPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m91_round_of_16",
+      "label": "Round of 16 \u2014 TBD vs TBD",
+      "match_no": 91,
+      "stage": "Round of 16",
+      "date": "2026-07-05",
+      "kickoff": "2026-07-05T20:00:00Z",
+      "ceilings": {
+        "cat1": 1500,
+        "cat2": 1000
+      },
+      "sites": {
+        "TickPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    },
+    {
+      "id": "m104_final",
+      "label": "FINAL \u2014 TBD vs TBD",
+      "match_no": 104,
+      "stage": "Final",
+      "date": "2026-07-19",
+      "kickoff": "2026-07-19T19:00:00Z",
+      "ceilings": {
+        "cat1": 4000,
+        "cat2": 2500
+      },
+      "sites": {
+        "TickPick": {
+          "status": "ok",
+          "count": 0
+        },
+        "Vivid Seats": {
+          "status": "fail",
+          "error": "no listings"
+        },
+        "AXS": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatPick": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "SeatGeek": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Gametime": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "Viagogo": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        },
+        "StubHub": {
+          "status": "fail",
+          "error": "disabled or no URL"
+        }
+      },
+      "listings": []
+    }
+  ]
+}
