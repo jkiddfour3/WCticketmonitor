@@ -144,6 +144,146 @@ def _walk_for_items(node, keys_hint, depth=0, max_depth=8):
 
 
 # ---------- per-site parsers ----------------------------------------------
+# Each parser receives raw captured JSON bodies and pulls Listings out.
+
+def _extract_amount(v):
+    """Extract numeric amount from a value that might be a dict (e.g. {amount: X})."""
+    if isinstance(v, dict):
+        for k in ("amount", "value", "displayValue"):
+            if k in v:
+                inner = v[k]
+                if isinstance(inner, (int, float)):
+                    return inner
+                try:
+                    return float(inner)
+                except (TypeError, ValueError):
+                    pass
+        return None
+    return v
+
+
+# Vivid-specific field name candidates, in priority order.
+VIVID_ALL_IN_KEYS = ("allInPrice", "totalPriceWithFees", "displayPrice", "dprice",
+                     "buyerTotalPrice", "ttpb", "totalAllIn", "dp")
+VIVID_BASE_PRICE_KEYS = ("price", "p", "totalPrice", "currentPrice", "tp",
+                         "listPrice", "ttp")
+VIVID_FEE_KEYS = ("serviceFee", "deliveryFee", "processingFee", "buyerFee", "bp",
+                  "fees", "totalFees", "ttf")
+
+
+def parse_vivid_listings(bodies, event_url):
+    """Vivid-specific parser. Tries to pull the actual all-in price.
+
+    Strategy:
+      1. Look for a known all-in price field (allInPrice, dp, etc.) — use directly.
+      2. Else, look for base price + separately-listed fees — sum them.
+      3. Else, fall back to just the base price; multiplier will apply downstream.
+    """
+    listings = []
+    seen = set()
+    debug_logged = False
+
+    for resp in bodies:
+        items = _walk_for_items(
+            resp["body"],
+            {"section", "sectionName", "price", "p", "id", "listingId"}
+        )
+        if not items:
+            continue
+
+        # Debug: dump first item's structure to workflow log
+        if not debug_logged and items:
+            first = items[0]
+            if isinstance(first, dict):
+                print(f"      [DEBUG Vivid first item keys] {sorted(first.keys())}")
+                for k in sorted(first.keys()):
+                    v = first[k]
+                    if isinstance(v, (int, float)):
+                        print(f"           {k} = {v}")
+                    elif isinstance(v, dict):
+                        for kk, vv in v.items():
+                            if isinstance(vv, (int, float)):
+                                print(f"           {k}.{kk} = {vv}")
+                debug_logged = True
+
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+
+            section = str(it.get("section") or it.get("sectionName") or it.get("s") or "")
+            row = str(it.get("row") or it.get("r") or "")
+            qty_raw = (it.get("quantity") or it.get("availableQuantity")
+                       or it.get("q") or 0)
+
+            try:
+                qty = int(qty_raw)
+            except (TypeError, ValueError):
+                continue
+
+            # Try 1: explicit all-in field
+            price = 0.0
+            fees_in = False
+            for k in VIVID_ALL_IN_KEYS:
+                v = _extract_amount(it.get(k))
+                if v is None:
+                    continue
+                try:
+                    fv = float(v)
+                except (TypeError, ValueError):
+                    continue
+                if fv > 0:
+                    price = fv
+                    fees_in = True
+                    break
+
+            # Try 2: base + sum of fees
+            if price <= 0:
+                base = 0.0
+                for k in VIVID_BASE_PRICE_KEYS:
+                    v = _extract_amount(it.get(k))
+                    if v is None:
+                        continue
+                    try:
+                        fv = float(v)
+                    except (TypeError, ValueError):
+                        continue
+                    if fv > 0:
+                        base = fv
+                        break
+
+                if base > 0:
+                    fees_sum = 0.0
+                    for k in VIVID_FEE_KEYS:
+                        v = _extract_amount(it.get(k))
+                        if v is None:
+                            continue
+                        try:
+                            fv = float(v)
+                        except (TypeError, ValueError):
+                            continue
+                        if fv > 0:
+                            fees_sum += fv
+                    if fees_sum > 0:
+                        price = base + fees_sum
+                        fees_in = True
+                    else:
+                        price = base
+                        fees_in = False
+
+            if not section or price <= 0 or qty <= 0:
+                continue
+
+            lid = str(it.get("id") or it.get("listingId")
+                      or f"{section}-{row}-{price}")
+            sig = (section, row, qty, round(price, 2))
+            if sig in seen:
+                continue
+            seen.add(sig)
+
+            listings.append(Listing("Vivid Seats", section, row, qty, price,
+                                    fees_in, event_url, lid))
+    return listings
+
 
 def parse_generic_listings(bodies, site_name, event_url, fees_included=False,
                            section_keys=("section", "sectionName", "s"),
@@ -268,9 +408,12 @@ def scrape_site(context: BrowserContext, site_key: str, event_url: str):
     if not captor.responses:
         return [], {"status": "fail", "error": "no JSON responses captured"}
 
-    listings = parse_generic_listings(
-        captor.responses, cfg["display"], event_url, fees_included=cfg["fees_inc"]
-    )
+    if site_key == "vividseats":
+        listings = parse_vivid_listings(captor.responses, event_url)
+    else:
+        listings = parse_generic_listings(
+            captor.responses, cfg["display"], event_url, fees_included=cfg["fees_inc"]
+        )
     if not listings:
         return [], {"status": "ok",
                     "count": 0,
