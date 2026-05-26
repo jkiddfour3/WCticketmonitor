@@ -284,7 +284,241 @@ def parse_vivid_listings(bodies, event_url):
                                     fees_in, event_url, lid))
     return listings
 
+# StubHub-specific field name candidates.
+STUBHUB_ALL_IN_KEYS = ("allInPrice", "totalPrice", "ttp", "totalAllInPrice",
+                       "buyerTotalPrice", "totalAmount", "displayPrice")
+STUBHUB_BASE_PRICE_KEYS = ("currentPrice", "listPrice", "rawPrice", "price",
+                           "amount")
+STUBHUB_FEE_KEYS = ("serviceFee", "deliveryFee", "fulfillmentFee", "fees",
+                    "totalFees", "buyerFee")
 
+
+def parse_stubhub_listings(bodies, event_url):
+    """StubHub parser. StubHub often returns all-in pricing post-2024 FTC ruling,
+    but field names vary by jurisdiction/A-B test."""
+    listings = []
+    seen = set()
+    debug_logged = False
+
+    for resp in bodies:
+        items = _walk_for_items(
+            resp["body"],
+            {"sectionName", "section", "currentPrice", "listingId", "id"}
+        )
+        if not items:
+            continue
+
+        if not debug_logged and items:
+            first = items[0]
+            if isinstance(first, dict):
+                print(f"      [DEBUG StubHub first item keys] {sorted(first.keys())}")
+                for k in sorted(first.keys()):
+                    v = first[k]
+                    if isinstance(v, (int, float)):
+                        print(f"           {k} = {v}")
+                    elif isinstance(v, dict):
+                        for kk, vv in v.items():
+                            if isinstance(vv, (int, float)):
+                                print(f"           {k}.{kk} = {vv}")
+                debug_logged = True
+
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+
+            section = str(it.get("sectionName") or it.get("section")
+                          or it.get("s") or "")
+            row = str(it.get("row") or it.get("rowName") or it.get("r") or "")
+            qty_raw = (it.get("quantity") or it.get("availableTickets")
+                       or it.get("availableQuantity") or it.get("q") or 0)
+
+            try:
+                qty = int(qty_raw)
+            except (TypeError, ValueError):
+                continue
+
+            # Try 1: explicit all-in field
+            price = 0.0
+            fees_in = False
+            for k in STUBHUB_ALL_IN_KEYS:
+                v = _extract_amount(it.get(k))
+                if v is None:
+                    continue
+                try:
+                    fv = float(v)
+                except (TypeError, ValueError):
+                    continue
+                if fv > 0:
+                    price = fv
+                    fees_in = True
+                    break
+
+            # Try 2: base + sum of fees
+            if price <= 0:
+                base = 0.0
+                for k in STUBHUB_BASE_PRICE_KEYS:
+                    v = _extract_amount(it.get(k))
+                    if v is None:
+                        continue
+                    try:
+                        fv = float(v)
+                    except (TypeError, ValueError):
+                        continue
+                    if fv > 0:
+                        base = fv
+                        break
+
+                if base > 0:
+                    fees_sum = 0.0
+                    for k in STUBHUB_FEE_KEYS:
+                        v = _extract_amount(it.get(k))
+                        if v is None:
+                            continue
+                        try:
+                            fv = float(v)
+                        except (TypeError, ValueError):
+                            continue
+                        if fv > 0:
+                            fees_sum += fv
+                    if fees_sum > 0:
+                        price = base + fees_sum
+                        fees_in = True
+                    else:
+                        price = base
+                        fees_in = False
+
+            if not section or price <= 0 or qty <= 0:
+                continue
+
+            lid = str(it.get("listingId") or it.get("id")
+                      or f"{section}-{row}-{price}")
+            sig = (section, row, qty, round(price, 2))
+            if sig in seen:
+                continue
+            seen.add(sig)
+
+            listings.append(Listing("StubHub", section, row, qty, price,
+                                    fees_in, event_url, lid))
+    return listings
+
+
+# SeatGeek-specific field name candidates (note snake_case — SeatGeek's
+# internal API uses Python-style naming).
+SEATGEEK_ALL_IN_KEYS = ("total_price", "all_in_price", "display_price_with_fees",
+                        "buyer_total_price", "price_with_fees", "tp")
+SEATGEEK_BASE_PRICE_KEYS = ("display_price", "price", "lowest_price",
+                            "listing_price", "raw_price", "p")
+SEATGEEK_FEE_KEYS = ("service_fee", "delivery_fee", "processing_fee",
+                     "fees", "total_fees")
+
+
+def parse_seatgeek_listings(bodies, event_url):
+    """SeatGeek parser. SeatGeek API uses snake_case field names and toggles
+    all-in pricing based on user/region settings."""
+    listings = []
+    seen = set()
+    debug_logged = False
+
+    for resp in bodies:
+        items = _walk_for_items(
+            resp["body"],
+            {"section", "row", "display_price", "price", "id", "sg_id"}
+        )
+        if not items:
+            continue
+
+        if not debug_logged and items:
+            first = items[0]
+            if isinstance(first, dict):
+                print(f"      [DEBUG SeatGeek first item keys] {sorted(first.keys())}")
+                for k in sorted(first.keys()):
+                    v = first[k]
+                    if isinstance(v, (int, float)):
+                        print(f"           {k} = {v}")
+                    elif isinstance(v, dict):
+                        for kk, vv in v.items():
+                            if isinstance(vv, (int, float)):
+                                print(f"           {k}.{kk} = {vv}")
+                debug_logged = True
+
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+
+            section = str(it.get("section") or it.get("sec")
+                          or it.get("sectionName") or "")
+            row = str(it.get("row") or it.get("r") or "")
+            qty_raw = (it.get("quantity") or it.get("q")
+                       or it.get("available_quantity") or 0)
+
+            try:
+                qty = int(qty_raw)
+            except (TypeError, ValueError):
+                continue
+
+            # Try 1: explicit all-in field
+            price = 0.0
+            fees_in = False
+            for k in SEATGEEK_ALL_IN_KEYS:
+                v = _extract_amount(it.get(k))
+                if v is None:
+                    continue
+                try:
+                    fv = float(v)
+                except (TypeError, ValueError):
+                    continue
+                if fv > 0:
+                    price = fv
+                    fees_in = True
+                    break
+
+            # Try 2: base + sum of fees
+            if price <= 0:
+                base = 0.0
+                for k in SEATGEEK_BASE_PRICE_KEYS:
+                    v = _extract_amount(it.get(k))
+                    if v is None:
+                        continue
+                    try:
+                        fv = float(v)
+                    except (TypeError, ValueError):
+                        continue
+                    if fv > 0:
+                        base = fv
+                        break
+
+                if base > 0:
+                    fees_sum = 0.0
+                    for k in SEATGEEK_FEE_KEYS:
+                        v = _extract_amount(it.get(k))
+                        if v is None:
+                            continue
+                        try:
+                            fv = float(v)
+                        except (TypeError, ValueError):
+                            continue
+                        if fv > 0:
+                            fees_sum += fv
+                    if fees_sum > 0:
+                        price = base + fees_sum
+                        fees_in = True
+                    else:
+                        price = base
+                        fees_in = False
+
+            if not section or price <= 0 or qty <= 0:
+                continue
+
+            lid = str(it.get("id") or it.get("sg_id")
+                      or it.get("listing_id") or f"{section}-{row}-{price}")
+            sig = (section, row, qty, round(price, 2))
+            if sig in seen:
+                continue
+            seen.add(sig)
+
+            listings.append(Listing("SeatGeek", section, row, qty, price,
+                                    fees_in, event_url, lid))
+    return listings
 def parse_generic_listings(bodies, site_name, event_url, fees_included=False,
                            section_keys=("section", "sectionName", "s"),
                            row_keys=("row", "r"),
@@ -410,6 +644,10 @@ def scrape_site(context: BrowserContext, site_key: str, event_url: str):
 
     if site_key == "vividseats":
         listings = parse_vivid_listings(captor.responses, event_url)
+    elif site_key == "stubhub":
+        listings = parse_stubhub_listings(captor.responses, event_url)
+    elif site_key == "seatgeek":
+        listings = parse_seatgeek_listings(captor.responses, event_url)
     else:
         listings = parse_generic_listings(
             captor.responses, cfg["display"], event_url, fees_included=cfg["fees_inc"]

@@ -28,15 +28,10 @@
       "enabled": true,
       "price_ceilings": { "cat1": 700, "cat2": 500 },
       "sites": {
-        "tickpick":   { "enabled": false, "url": "" },
-        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-13-2026--sports-soccer/production/5080443" },
-        "axs":        { "enabled": true,  "url": "https://www.axs.com/events/882558/brazil-vs-morocco-world-cup-match-7-group-c-tickets" },
-        "seatpick":   { "enabled": true,  "url": "https://seatpick.com/brazil-vs-morocco-world-cup-tickets" },
-        "seatgeek":   { "enabled": false, "url": "https://seatgeek.com/fifa-world-cup-tickets/international-soccer/2026-06-13-6-pm/17269669" },
-        "gametime":   { "enabled": false, "url": "" },
-        "viagogo":    { "enabled": false, "url": "" },
-        "stubhub":    { "enabled": false, "url": "https://www.stubhub.com/world-cup-east-rutherford-tickets-6-13-2026/event/153021803/" }
-      }
+  "vividseats": { "enabled": true, "url": "https://www.vividseats.com/..." },
+  "stubhub":    { "enabled": true, "url": "https://www.stubhub.com/..." },
+  "seatgeek":   { "enabled": true, "url": "https://seatgeek.com/..." }
+}
     },
     {
       "id": "m17_fra_sen",
@@ -127,16 +122,11 @@
       "kickoff": "2026-07-01T01:30:00Z",
       "enabled": true,
       "price_ceilings": { "cat1": 750, "cat2": 500 },
-      "sites": {
-        "tickpick":   { "enabled": false, "url": "" },
-        "vividseats": { "enabled": true,  "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-30-2026--sports-soccer/production/5080730" },
-        "axs":        { "enabled": false, "url": "" },
-        "seatpick":   { "enabled": false, "url": "" },
-        "seatgeek":   { "enabled": false, "url": "" },
-        "gametime":   { "enabled": false, "url": "" },
-        "viagogo":    { "enabled": false, "url": "" },
-        "stubhub":    { "enabled": false, "url": "" }
-      }
+  "sites": {
+  "vividseats": { "enabled": true, "url": "https://www.vividseats.com/..." },
+  "stubhub":    { "enabled": true, "url": "https://www.stubhub.com/..." },
+  "seatgeek":   { "enabled": true, "url": "https://seatgeek.com/..." }
+}
     },
     {
       "id": "m91_round_of_16",
