@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T19:59:13+00:00",
+  "updated_at": "2026-05-30T00:03:08+00:00",
   "venue": "MetLife Stadium",
   "venue_label": "New York New Jersey Stadium",
   "matches": [
@@ -49,7 +49,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 504
+          "count": 508
         },
         "AXS": {
           "status": "fail",
@@ -82,22 +82,33 @@
           "section": "224A",
           "row": "9",
           "qty": 4,
-          "price_each": 592.0,
-          "all_in": 751.84,
+          "price_each": 593.0,
+          "all_in": 753.11,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "b9bcbf63bc75"
+          "fingerprint": "ebde9c0dec06"
         },
         {
           "site": "Vivid Seats",
           "section": "223",
           "row": "8",
           "qty": 4,
-          "price_each": 621.0,
-          "all_in": 788.67,
+          "price_each": 623.0,
+          "all_in": 791.21,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "f53974fd9f60"
+          "fingerprint": "808d0eb2f14b"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "224A",
+          "row": "3",
+          "qty": 2,
+          "price_each": 637.0,
+          "all_in": 808.99,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "f8249a954092"
         },
         {
           "site": "Vivid Seats",
@@ -112,25 +123,36 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "224A",
-          "row": "3",
-          "qty": 2,
-          "price_each": 648.0,
-          "all_in": 822.96,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "ecba1df5602a"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "223",
           "row": "6",
           "qty": 4,
-          "price_each": 651.0,
-          "all_in": 826.77,
+          "price_each": 652.0,
+          "all_in": 828.04,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "cc9739251e0a"
+          "fingerprint": "47f503be2a0f"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "222A",
+          "row": "9",
+          "qty": 4,
+          "price_each": 659.0,
+          "all_in": 836.93,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "511ccfe2fb66"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "233",
+          "row": "9",
+          "qty": 2,
+          "price_each": 659.0,
+          "all_in": 836.93,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "2ad0c8829002"
         },
         {
           "site": "Vivid Seats",
@@ -145,14 +167,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "222A",
-          "row": "9",
+          "section": "208",
+          "row": "6",
           "qty": 4,
-          "price_each": 662.0,
-          "all_in": 840.74,
+          "price_each": 664.0,
+          "all_in": 843.28,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "f695ea7d37e5"
+          "fingerprint": "119da5b305d8"
         },
         {
           "site": "Vivid Seats",
@@ -164,28 +186,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "835b86929893"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "208",
-          "row": "11",
-          "qty": 2,
-          "price_each": 667.0,
-          "all_in": 847.09,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "cff84155ba6a"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "208",
-          "row": "6",
-          "qty": 4,
-          "price_each": 670.0,
-          "all_in": 850.9,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "5e65b9a6fc7c"
         },
         {
           "site": "Vivid Seats",
@@ -211,6 +211,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "208",
+          "row": "11",
+          "qty": 2,
+          "price_each": 677.0,
+          "all_in": 859.79,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "e7cccd3de82b"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "233",
           "row": "4",
           "qty": 2,
@@ -230,6 +241,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "6bfe411f5b67"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "219",
+          "row": "5",
+          "qty": 4,
+          "price_each": 684.0,
+          "all_in": 868.68,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "db5d40341eae"
         },
         {
           "site": "Vivid Seats",
@@ -255,58 +277,80 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "219",
-          "row": "11",
-          "qty": 4,
-          "price_each": 692.0,
-          "all_in": 878.84,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "fbe6328c79ad"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "227a",
           "row": "1",
           "qty": 2,
-          "price_each": 701.0,
-          "all_in": 890.27,
+          "price_each": 698.0,
+          "all_in": 886.46,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "2e97d4a0544a"
+          "fingerprint": "9ab0abe9dfbb"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "207c",
+          "row": "10",
+          "qty": 4,
+          "price_each": 698.0,
+          "all_in": 886.46,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "436765d4e945"
         },
         {
           "site": "Vivid Seats",
           "section": "121",
           "row": "48",
-          "qty": 8,
-          "price_each": 702.0,
-          "all_in": 891.54,
+          "qty": 5,
+          "price_each": 699.0,
+          "all_in": 887.73,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "a9f326876a62"
+          "fingerprint": "60782a637090"
         },
         {
           "site": "Vivid Seats",
           "section": "222a",
           "row": "12",
           "qty": 8,
-          "price_each": 702.0,
-          "all_in": 891.54,
+          "price_each": 699.0,
+          "all_in": 887.73,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "3bfcb942ef5d"
+          "fingerprint": "4894be40e425"
         },
         {
           "site": "Vivid Seats",
           "section": "221a",
           "row": "10",
           "qty": 4,
+          "price_each": 699.0,
+          "all_in": 887.73,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "2630b566c952"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "231a",
+          "row": "10",
+          "qty": 2,
+          "price_each": 700.0,
+          "all_in": 889.0,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "53e77766c9b3"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "219",
+          "row": "11",
+          "qty": 4,
           "price_each": 702.0,
           "all_in": 891.54,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "d69c60f71fa4"
+          "fingerprint": "b7477642a73a"
         },
         {
           "site": "Vivid Seats",
@@ -332,28 +376,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "231a",
-          "row": "10",
-          "qty": 2,
-          "price_each": 709.0,
-          "all_in": 900.43,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "23d4e3067c73"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "207c",
-          "row": "10",
-          "qty": 4,
-          "price_each": 710.0,
-          "all_in": 901.7,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "e9333aba8ae4"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "227a",
           "row": "14",
           "qty": 2,
@@ -373,6 +395,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "5dbcfa2923e4"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "208",
+          "row": "4",
+          "qty": 4,
+          "price_each": 718.0,
+          "all_in": 911.86,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "32e866e9cac4"
         },
         {
           "site": "Vivid Seats",
@@ -442,17 +475,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "219",
-          "row": "4",
-          "qty": 2,
-          "price_each": 739.0,
-          "all_in": 938.53,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "c059568e4d88"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "233",
           "row": "6",
           "qty": 3,
@@ -475,6 +497,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "219",
+          "row": "4",
+          "qty": 2,
+          "price_each": 751.0,
+          "all_in": 953.77,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "50238e6142a3"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "233",
           "row": "13",
           "qty": 4,
@@ -483,17 +516,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "bab135920263"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "148",
-          "row": "46",
-          "qty": 2,
-          "price_each": 753.0,
-          "all_in": 956.31,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "3efe29a5de49"
         },
         {
           "site": "Vivid Seats",
@@ -508,6 +530,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "148",
+          "row": "46",
+          "qty": 2,
+          "price_each": 753.0,
+          "all_in": 956.31,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "3efe29a5de49"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "233",
           "row": "2",
           "qty": 4,
@@ -516,6 +549,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "0c0810d1c028"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "219",
+          "row": "6",
+          "qty": 2,
+          "price_each": 763.0,
+          "all_in": 969.01,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "abf21a7dc6a4"
         },
         {
           "site": "Vivid Seats",
@@ -673,28 +717,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "117",
-          "row": "23",
-          "qty": 2,
-          "price_each": 784.0,
-          "all_in": 995.68,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "7c1c6b53bb51"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "219",
-          "row": "6",
-          "qty": 2,
-          "price_each": 784.0,
-          "all_in": 995.68,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "fad95e063a11"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "234",
           "row": "10",
           "qty": 4,
@@ -786,11 +808,22 @@
           "section": "101",
           "row": "18",
           "qty": 2,
+          "price_each": 813.0,
+          "all_in": 1032.51,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "2fc7df711086"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "134",
+          "row": "31",
+          "qty": 4,
           "price_each": 815.0,
           "all_in": 1035.05,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "15acb525596a"
+          "fingerprint": "8968f727ba1e"
         },
         {
           "site": "Vivid Seats",
@@ -893,6 +926,39 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "219",
+          "row": "1",
+          "qty": 3,
+          "price_each": 845.0,
+          "all_in": 1073.15,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "ad9f8732f116"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "244",
+          "row": "2",
+          "qty": 2,
+          "price_each": 845.0,
+          "all_in": 1073.15,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "a53ed262bee6"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "128",
+          "row": "30",
+          "qty": 2,
+          "price_each": 849.0,
+          "all_in": 1078.23,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "07f7740cc186"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "148",
           "row": "41",
           "qty": 3,
@@ -915,6 +981,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "101",
+          "row": "18",
+          "qty": 4,
+          "price_each": 854.0,
+          "all_in": 1084.58,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "fef7412bf4c0"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "244",
           "row": "1",
           "qty": 4,
@@ -923,50 +1000,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "adbf96d8907e"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "101",
-          "row": "18",
-          "qty": 4,
-          "price_each": 856.0,
-          "all_in": 1087.12,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "86374a04892f"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "126",
-          "row": "18",
-          "qty": 4,
-          "price_each": 858.0,
-          "all_in": 1089.66,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "cf4bbf9d67d3"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "126",
-          "row": "22",
-          "qty": 4,
-          "price_each": 858.0,
-          "all_in": 1089.66,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "fb15498159ee"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "219",
-          "row": "1",
-          "qty": 4,
-          "price_each": 858.0,
-          "all_in": 1089.66,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "76a6f2babc60"
         },
         {
           "site": "Vivid Seats",
@@ -1025,6 +1058,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "143",
+          "row": "31",
+          "qty": 8,
+          "price_each": 865.0,
+          "all_in": 1098.55,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "8528ca6a8a25"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "144",
           "row": "32",
           "qty": 7,
@@ -1036,17 +1080,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "219",
-          "row": "1",
-          "qty": 3,
-          "price_each": 866.0,
-          "all_in": 1099.82,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "c27b5b5d48a7"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "234",
           "row": "9",
           "qty": 2,
@@ -1055,17 +1088,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "d001435277cf"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "244",
-          "row": "2",
-          "qty": 2,
-          "price_each": 866.0,
-          "all_in": 1099.82,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "43b77398e823"
         },
         {
           "site": "Vivid Seats",
@@ -1256,6 +1278,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "148",
+          "row": "20",
+          "qty": 4,
+          "price_each": 909.0,
+          "all_in": 1154.43,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "5ef3d57e772a"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "126",
           "row": "8",
           "qty": 2,
@@ -1297,17 +1330,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "d0f177d748db"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "143",
-          "row": "31",
-          "qty": 8,
-          "price_each": 916.0,
-          "all_in": 1163.32,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "08ca79536207"
         },
         {
           "site": "Vivid Seats",
@@ -1377,14 +1399,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "148",
-          "row": "20",
-          "qty": 4,
-          "price_each": 945.0,
-          "all_in": 1200.15,
+          "section": "149",
+          "row": "41",
+          "qty": 8,
+          "price_each": 949.0,
+          "all_in": 1205.23,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "5190ab00044d"
+          "fingerprint": "3a0936eeb692"
         },
         {
           "site": "Vivid Seats",
@@ -1473,17 +1495,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "5a38d006c232"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "149",
-          "row": "41",
-          "qty": 8,
-          "price_each": 990.0,
-          "all_in": 1257.3,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "f2d8f3a3668b"
         },
         {
           "site": "Vivid Seats",
@@ -1638,17 +1649,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "752b8b611478"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "144",
-          "row": "30",
-          "qty": 2,
-          "price_each": 1029.0,
-          "all_in": 1306.83,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "bbc9ca1c8ecf"
         },
         {
           "site": "Vivid Seats",
@@ -2367,6 +2367,28 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "115C",
+          "row": "7",
+          "qty": 4,
+          "price_each": 1574.0,
+          "all_in": 1998.98,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "fc2398ce45b6"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "115A",
+          "row": "27",
+          "qty": 4,
+          "price_each": 1574.0,
+          "all_in": 1998.98,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "291b4e9aaae3"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "139",
           "row": "22",
           "qty": 2,
@@ -2375,17 +2397,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "501397eb9f7e"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "109",
-          "row": "11",
-          "qty": 4,
-          "price_each": 1595.0,
-          "all_in": 2025.65,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "d780d56670e5"
         },
         {
           "site": "Vivid Seats",
@@ -2400,25 +2411,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "115C",
-          "row": "7",
+          "section": "109",
+          "row": "11",
           "qty": 4,
-          "price_each": 1597.0,
-          "all_in": 2028.19,
+          "price_each": 1595.0,
+          "all_in": 2025.65,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "d371f9811fce"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "115A",
-          "row": "27",
-          "qty": 4,
-          "price_each": 1597.0,
-          "all_in": 2028.19,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "7b341be0a201"
+          "fingerprint": "d780d56670e5"
         },
         {
           "site": "Vivid Seats",
@@ -2466,36 +2466,36 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "115a",
-          "row": "32",
-          "qty": 8,
-          "price_each": 1688.0,
-          "all_in": 2143.76,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "c033854b4ab0"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "116",
           "row": "13",
           "qty": 4,
-          "price_each": 1690.0,
-          "all_in": 2146.3,
+          "price_each": 1669.0,
+          "all_in": 2119.63,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "37ad15f02fa4"
+          "fingerprint": "deeffbc40488"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "115a",
+          "row": "32",
+          "qty": 8,
+          "price_each": 1670.0,
+          "all_in": 2120.9,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "4c21074a5eee"
         },
         {
           "site": "Vivid Seats",
           "section": "115c",
           "row": "9",
           "qty": 4,
-          "price_each": 1695.0,
-          "all_in": 2152.65,
+          "price_each": 1670.0,
+          "all_in": 2120.9,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "989307b2c66f"
+          "fingerprint": "31bab516bc3a"
         },
         {
           "site": "Vivid Seats",
@@ -2643,17 +2643,6 @@
         {
           "site": "Vivid Seats",
           "section": "106",
-          "row": "7",
-          "qty": 8,
-          "price_each": 1992.0,
-          "all_in": 2529.84,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "42f43685f556"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "106",
           "row": "6",
           "qty": 6,
           "price_each": 1992.0,
@@ -2661,6 +2650,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
           "fingerprint": "b098f815e570"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "106",
+          "row": "7",
+          "qty": 8,
+          "price_each": 1992.0,
+          "all_in": 2529.84,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
+          "fingerprint": "42f43685f556"
         },
         {
           "site": "Vivid Seats",
@@ -2744,11 +2744,11 @@
           "section": "202B",
           "row": "17",
           "qty": 2,
-          "price_each": 2234.0,
-          "all_in": 2837.18,
+          "price_each": 2232.0,
+          "all_in": 2834.64,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "60c2238a1988"
+          "fingerprint": "2387502adbc8"
         },
         {
           "site": "Vivid Seats",
@@ -2799,11 +2799,11 @@
           "section": "144",
           "row": "11",
           "qty": 2,
-          "price_each": 3312.0,
-          "all_in": 4206.24,
+          "price_each": 3310.0,
+          "all_in": 4203.7,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-16-2026--sports-soccer/production/5080458",
-          "fingerprint": "d687a970ae09"
+          "fingerprint": "9ec88f203e1c"
         }
       ]
     },
@@ -2825,7 +2825,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 468
+          "count": 471
         },
         "AXS": {
           "status": "fail",
@@ -2853,6 +2853,17 @@
         }
       },
       "listings": [
+        {
+          "site": "Vivid Seats",
+          "section": "247A",
+          "row": "10",
+          "qty": 2,
+          "price_each": 448.0,
+          "all_in": 568.96,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "cb4ba840e7e4"
+        },
         {
           "site": "Vivid Seats",
           "section": "247A",
@@ -2896,17 +2907,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
           "fingerprint": "f5d8322a4f33"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "247A",
-          "row": "10",
-          "qty": 3,
-          "price_each": 477.0,
-          "all_in": 605.79,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "e43454ebd01b"
         },
         {
           "site": "Vivid Seats",
@@ -3053,6 +3053,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "247a",
+          "row": "10",
+          "qty": 2,
+          "price_each": 517.0,
+          "all_in": 656.59,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "d3aad679b115"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "245A",
           "row": "11",
           "qty": 3,
@@ -3105,6 +3116,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
           "fingerprint": "c71416441bb7"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "206A",
+          "row": "1",
+          "qty": 3,
+          "price_each": 539.0,
+          "all_in": 684.53,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "5850f51a9ac7"
         },
         {
           "site": "Vivid Seats",
@@ -3163,17 +3185,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "206A",
-          "row": "1",
-          "qty": 3,
-          "price_each": 548.0,
-          "all_in": 695.96,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "c22d410b95ba"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "149",
           "row": "36",
           "qty": 4,
@@ -3226,17 +3237,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
           "fingerprint": "3b1c6e7c43e3"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "247a",
-          "row": "10",
-          "qty": 3,
-          "price_each": 552.0,
-          "all_in": 701.04,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "33e3bd464f82"
         },
         {
           "site": "Vivid Seats",
@@ -4264,17 +4264,6 @@
         {
           "site": "Vivid Seats",
           "section": "128",
-          "row": "26",
-          "qty": 4,
-          "price_each": 751.0,
-          "all_in": 953.77,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "11cf2a75d5f7"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "128",
           "row": "25",
           "qty": 4,
           "price_each": 751.0,
@@ -4282,6 +4271,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
           "fingerprint": "4fb509bc2042"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "128",
+          "row": "26",
+          "qty": 4,
+          "price_each": 751.0,
+          "all_in": 953.77,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "11cf2a75d5f7"
         },
         {
           "site": "Vivid Seats",
@@ -4417,6 +4417,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "137",
+          "row": "15",
+          "qty": 4,
+          "price_each": 773.0,
+          "all_in": 981.71,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "eb7bb964fc03"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "114",
           "row": "20",
           "qty": 4,
@@ -4549,17 +4560,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "137",
-          "row": "15",
-          "qty": 4,
-          "price_each": 811.0,
-          "all_in": 1029.97,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "ba472f71e879"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "143",
           "row": "23",
           "qty": 4,
@@ -4604,17 +4604,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "137",
-          "row": "14",
-          "qty": 4,
-          "price_each": 831.0,
-          "all_in": 1055.37,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "5bac8849b3e1"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "140",
           "row": "14",
           "qty": 4,
@@ -4623,6 +4612,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
           "fingerprint": "b6ec9d2b230c"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "137",
+          "row": "14",
+          "qty": 4,
+          "price_each": 831.0,
+          "all_in": 1055.37,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
+          "fingerprint": "5bac8849b3e1"
         },
         {
           "site": "Vivid Seats",
@@ -4879,17 +4879,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "116",
-          "row": "28",
-          "qty": 3,
-          "price_each": 1029.0,
-          "all_in": 1306.83,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-22-2026--sports-soccer/production/5080500",
-          "fingerprint": "c5788c2ccc91"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "139",
           "row": "18",
           "qty": 4,
@@ -5041,7 +5030,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 474
+          "count": 481
         },
         "AXS": {
           "status": "fail",
@@ -5093,6 +5082,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "219",
+          "row": "13",
+          "qty": 4,
+          "price_each": 884.0,
+          "all_in": 1122.68,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "ddd861c02599"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "244",
           "row": "9",
           "qty": 4,
@@ -5112,17 +5112,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "8331808c896f"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "123",
-          "row": "46",
-          "qty": 2,
-          "price_each": 905.0,
-          "all_in": 1149.35,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "155b2aa17f4d"
         },
         {
           "site": "Vivid Seats",
@@ -5148,6 +5137,39 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "207C",
+          "row": "9",
+          "qty": 4,
+          "price_each": 928.0,
+          "all_in": 1178.56,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "d6068691cd70"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "149",
+          "row": "41",
+          "qty": 2,
+          "price_each": 932.0,
+          "all_in": 1183.64,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "863689947da1"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "149",
+          "row": "44",
+          "qty": 2,
+          "price_each": 932.0,
+          "all_in": 1183.64,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "79edfa66c0aa"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "121",
           "row": "47",
           "qty": 2,
@@ -5156,6 +5178,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "0e95fe7a22f9"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "233",
+          "row": "9",
+          "qty": 4,
+          "price_each": 938.0,
+          "all_in": 1191.26,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "f08af29beff5"
         },
         {
           "site": "Vivid Seats",
@@ -5189,28 +5222,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "a857425db409"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "121",
-          "row": "48",
-          "qty": 4,
-          "price_each": 946.0,
-          "all_in": 1201.42,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "0cd1855db238"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "134",
-          "row": "26",
-          "qty": 2,
-          "price_each": 946.0,
-          "all_in": 1201.42,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "0c0d931616aa"
         },
         {
           "site": "Vivid Seats",
@@ -5266,28 +5277,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "bddfcde65a5f"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "149",
-          "row": "41",
-          "qty": 2,
-          "price_each": 963.0,
-          "all_in": 1223.01,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "662c85da407a"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "149",
-          "row": "44",
-          "qty": 2,
-          "price_each": 963.0,
-          "all_in": 1223.01,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "edf759088365"
         },
         {
           "site": "Vivid Seats",
@@ -5423,17 +5412,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "244",
-          "row": "12",
-          "qty": 3,
-          "price_each": 974.0,
-          "all_in": 1236.98,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "0f97d8eaf498"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "220C",
           "row": "9",
           "qty": 4,
@@ -5489,6 +5467,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "208",
+          "row": "2",
+          "qty": 4,
+          "price_each": 1005.0,
+          "all_in": 1276.35,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "bfad7decae07"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "126",
           "row": "19",
           "qty": 2,
@@ -5497,6 +5486,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "b69e36964002"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "219",
+          "row": "9",
+          "qty": 4,
+          "price_each": 1007.0,
+          "all_in": 1278.89,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "f0abb0394cbd"
         },
         {
           "site": "Vivid Seats",
@@ -5535,12 +5535,23 @@
           "site": "Vivid Seats",
           "section": "121",
           "row": "48",
-          "qty": 2,
+          "qty": 4,
           "price_each": 1024.0,
           "all_in": 1300.48,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "ec891c6545b0"
+          "fingerprint": "c8baebab137d"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "208",
+          "row": "7",
+          "qty": 4,
+          "price_each": 1024.0,
+          "all_in": 1300.48,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "50c68fa0e5c3"
         },
         {
           "site": "Vivid Seats",
@@ -5585,17 +5596,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "20b89184bd2a"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "208",
-          "row": "7",
-          "qty": 4,
-          "price_each": 1024.0,
-          "all_in": 1300.48,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "50c68fa0e5c3"
         },
         {
           "site": "Vivid Seats",
@@ -5731,6 +5731,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "121",
+          "row": "47",
+          "qty": 4,
+          "price_each": 1044.0,
+          "all_in": 1325.88,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "20eb364a3239"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "126",
           "row": "11",
           "qty": 2,
@@ -5744,12 +5755,12 @@
           "site": "Vivid Seats",
           "section": "246A",
           "row": "5",
-          "qty": 6,
+          "qty": 4,
           "price_each": 1053.0,
           "all_in": 1337.31,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "9d20e825cb48"
+          "fingerprint": "45811dfb5af3"
         },
         {
           "site": "Vivid Seats",
@@ -5761,17 +5772,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "c68619092f53"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "121",
-          "row": "47",
-          "qty": 4,
-          "price_each": 1055.0,
-          "all_in": 1339.85,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "a1aea82e5263"
         },
         {
           "site": "Vivid Seats",
@@ -5918,6 +5918,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "220c",
+          "row": "12",
+          "qty": 4,
+          "price_each": 1083.0,
+          "all_in": 1375.41,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "b64dd4cf62c4"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "244",
           "row": "7",
           "qty": 2,
@@ -6050,6 +6061,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "134",
+          "row": "18",
+          "qty": 4,
+          "price_each": 1125.0,
+          "all_in": 1428.75,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "0343fd5d93b4"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "148",
           "row": "24",
           "qty": 4,
@@ -6069,17 +6091,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "c0fd6987d85d"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "134",
-          "row": "21",
-          "qty": 4,
-          "price_each": 1135.0,
-          "all_in": 1441.45,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "f5ddbb3687fb"
         },
         {
           "site": "Vivid Seats",
@@ -6325,14 +6336,25 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "134",
+          "row": "21",
+          "qty": 4,
+          "price_each": 1208.0,
+          "all_in": 1534.16,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "1a1acdb910ae"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "246a",
           "row": "5",
-          "qty": 6,
+          "qty": 4,
           "price_each": 1221.0,
           "all_in": 1550.67,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "9eb9efb6275d"
+          "fingerprint": "d8e2b7a34c4b"
         },
         {
           "site": "Vivid Seats",
@@ -6355,17 +6377,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "80bee1abfd95"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "134",
-          "row": "18",
-          "qty": 2,
-          "price_each": 1238.0,
-          "all_in": 1572.26,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "ba8b75f5ec2e"
         },
         {
           "site": "Vivid Seats",
@@ -6498,6 +6509,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "3fdb349c0368"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "246A",
+          "row": "5",
+          "qty": 4,
+          "price_each": 1297.0,
+          "all_in": 1647.19,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "5eabd1f2c3b4"
         },
         {
           "site": "Vivid Seats",
@@ -6666,6 +6688,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "103",
+          "row": "40",
+          "qty": 4,
+          "price_each": 1385.0,
+          "all_in": 1758.95,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "e1dc100278f5"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "148",
           "row": "21",
           "qty": 2,
@@ -6707,6 +6740,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "679623d82776"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "131",
+          "row": "17",
+          "qty": 4,
+          "price_each": 1424.0,
+          "all_in": 1808.48,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "9a7a6e26311e"
         },
         {
           "site": "Vivid Seats",
@@ -6765,17 +6809,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "131",
-          "row": "17",
-          "qty": 4,
-          "price_each": 1492.0,
-          "all_in": 1894.84,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "6bc9913951f7"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "245C",
           "row": "1",
           "qty": 2,
@@ -6784,6 +6817,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "bde3cb1ba39f"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "115C",
+          "row": "8",
+          "qty": 2,
+          "price_each": 1524.0,
+          "all_in": 1935.48,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "758564e44bbe"
         },
         {
           "site": "Vivid Seats",
@@ -6842,17 +6886,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "115C",
-          "row": "8",
-          "qty": 2,
-          "price_each": 1575.0,
-          "all_in": 2000.25,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "b67be24d0dcd"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "110",
           "row": "15",
           "qty": 4,
@@ -6883,6 +6916,28 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "495cf6b970e1"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "110",
+          "row": "19",
+          "qty": 16,
+          "price_each": 1613.0,
+          "all_in": 2048.51,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "03682c5d5aeb"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "116",
+          "row": "34",
+          "qty": 3,
+          "price_each": 1613.0,
+          "all_in": 2048.51,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "7bc16aae9a15"
         },
         {
           "site": "Vivid Seats",
@@ -6952,17 +7007,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "116",
-          "row": "34",
-          "qty": 3,
-          "price_each": 1668.0,
-          "all_in": 2118.36,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "12ce001e2999"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "126",
           "row": "3",
           "qty": 6,
@@ -6982,6 +7026,28 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "7e3f84ae614b"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "110",
+          "row": "22",
+          "qty": 2,
+          "price_each": 1771.0,
+          "all_in": 2249.17,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "13a0e05b2863"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "110",
+          "row": "12",
+          "qty": 4,
+          "price_each": 1778.0,
+          "all_in": 2258.06,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
+          "fingerprint": "5af7c627e3f9"
         },
         {
           "site": "Vivid Seats",
@@ -7007,17 +7073,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "110",
-          "row": "12",
-          "qty": 4,
-          "price_each": 1828.0,
-          "all_in": 2321.56,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "bc1960445c85"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "149",
           "row": "45",
           "qty": 2,
@@ -7026,17 +7081,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
           "fingerprint": "733884b09fe3"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "110",
-          "row": "22",
-          "qty": 2,
-          "price_each": 1906.0,
-          "all_in": 2420.62,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "5ad6fb7fa1ed"
         },
         {
           "site": "Vivid Seats",
@@ -7425,17 +7469,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "117",
-          "row": "13",
-          "qty": 4,
-          "price_each": 3430.0,
-          "all_in": 4356.1,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-25-2026--sports-soccer/production/5080645",
-          "fingerprint": "37ee177bce97"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "109",
           "row": "11",
           "qty": 4,
@@ -7543,7 +7576,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 527
+          "count": 541
         },
         "AXS": {
           "status": "fail",
@@ -7576,11 +7609,11 @@
           "section": "227B",
           "row": "18",
           "qty": 4,
-          "price_each": 686.0,
-          "all_in": 871.22,
+          "price_each": 685.0,
+          "all_in": 869.95,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "42f33846b568"
+          "fingerprint": "2d9969a255b2"
         },
         {
           "site": "Vivid Seats",
@@ -7592,6 +7625,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "c89f7bd51df6"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "202A",
+          "row": "8",
+          "qty": 4,
+          "price_each": 737.0,
+          "all_in": 935.99,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "c6d96470b5af"
         },
         {
           "site": "Vivid Seats",
@@ -7609,11 +7653,22 @@
           "section": "204",
           "row": "14",
           "qty": 4,
-          "price_each": 763.0,
-          "all_in": 969.01,
+          "price_each": 751.0,
+          "all_in": 953.77,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "a758d78f9108"
+          "fingerprint": "f6ff1695f8fe"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "204",
+          "row": "6",
+          "qty": 4,
+          "price_each": 772.0,
+          "all_in": 980.44,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "f88cdc0bd8e6"
         },
         {
           "site": "Vivid Seats",
@@ -7628,14 +7683,25 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "204",
-          "row": "6",
+          "section": "233",
+          "row": "3",
           "qty": 4,
-          "price_each": 787.0,
-          "all_in": 999.49,
+          "price_each": 780.0,
+          "all_in": 990.6,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "03f831d76c13"
+          "fingerprint": "2d0afba4f4e1"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "204",
+          "row": "12",
+          "qty": 4,
+          "price_each": 788.0,
+          "all_in": 1000.76,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "de2c969ae0eb"
         },
         {
           "site": "Vivid Seats",
@@ -7694,17 +7760,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "204",
-          "row": "12",
-          "qty": 4,
-          "price_each": 801.0,
-          "all_in": 1017.27,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "368a10bba54a"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "247A",
           "row": "11",
           "qty": 2,
@@ -7727,14 +7782,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "205A",
-          "row": "2",
-          "qty": 6,
-          "price_each": 812.0,
-          "all_in": 1031.24,
+          "section": "203A",
+          "row": "5",
+          "qty": 4,
+          "price_each": 811.0,
+          "all_in": 1029.97,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "3e6d6fdcf136"
+          "fingerprint": "96ed9e12e5a9"
         },
         {
           "site": "Vivid Seats",
@@ -7772,13 +7827,24 @@
         {
           "site": "Vivid Seats",
           "section": "203A",
-          "row": "5",
+          "row": "11",
           "qty": 4,
           "price_each": 826.0,
           "all_in": 1049.02,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "a42da706f969"
+          "fingerprint": "95d438757e65"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "202A",
+          "row": "2",
+          "qty": 2,
+          "price_each": 829.0,
+          "all_in": 1052.83,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "3c9409f05343"
         },
         {
           "site": "Vivid Seats",
@@ -7793,14 +7859,25 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "203A",
-          "row": "11",
+          "section": "233",
+          "row": "1",
           "qty": 4,
-          "price_each": 839.0,
-          "all_in": 1065.53,
+          "price_each": 833.0,
+          "all_in": 1057.91,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "2f063ee30494"
+          "fingerprint": "6e802746d0e0"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "201",
+          "row": "15",
+          "qty": 4,
+          "price_each": 835.0,
+          "all_in": 1060.45,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "3450acbb453e"
         },
         {
           "site": "Vivid Seats",
@@ -7837,36 +7914,25 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "104",
-          "row": "42",
-          "qty": 7,
-          "price_each": 841.0,
-          "all_in": 1068.07,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "537401f43a92"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "227B",
           "row": "18",
           "qty": 4,
-          "price_each": 845.0,
-          "all_in": 1073.15,
+          "price_each": 844.0,
+          "all_in": 1071.88,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "31f442fe2e2d"
+          "fingerprint": "2f32440adac5"
         },
         {
           "site": "Vivid Seats",
-          "section": "146",
-          "row": "29",
+          "section": "104",
+          "row": "21",
           "qty": 2,
-          "price_each": 852.0,
-          "all_in": 1082.04,
+          "price_each": 850.0,
+          "all_in": 1079.5,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "b2f90e52a820"
+          "fingerprint": "cb25b5576518"
         },
         {
           "site": "Vivid Seats",
@@ -7911,6 +7977,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "f99c86e4f60a"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "249A",
+          "row": "10",
+          "qty": 4,
+          "price_each": 863.0,
+          "all_in": 1096.01,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "3b55968c1283"
         },
         {
           "site": "Vivid Seats",
@@ -7969,17 +8046,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "249A",
-          "row": "10",
-          "qty": 4,
-          "price_each": 877.0,
-          "all_in": 1113.79,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "857ecd43d9d3"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "121",
           "row": "45",
           "qty": 28,
@@ -8013,6 +8079,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "250A",
+          "row": "9",
+          "qty": 4,
+          "price_each": 901.0,
+          "all_in": 1144.27,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "9e763ffc5186"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "203A",
           "row": "8",
           "qty": 4,
@@ -8032,28 +8109,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "1d009ba2c768"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "202A",
-          "row": "2",
-          "qty": 2,
-          "price_each": 915.0,
-          "all_in": 1162.05,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "0a7bf35fb97c"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "250A",
-          "row": "9",
-          "qty": 4,
-          "price_each": 915.0,
-          "all_in": 1162.05,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "38f1ba700b5c"
         },
         {
           "site": "Vivid Seats",
@@ -8134,6 +8189,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "250A",
+          "row": "8",
+          "qty": 4,
+          "price_each": 938.0,
+          "all_in": 1191.26,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "2a1e5e4b315b"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "128",
           "row": "47",
           "qty": 7,
@@ -8164,17 +8230,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "103f60aa08c4"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "250A",
-          "row": "8",
-          "qty": 4,
-          "price_each": 954.0,
-          "all_in": 1211.58,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "9f0eedfe0428"
         },
         {
           "site": "Vivid Seats",
@@ -8233,6 +8288,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "250A",
+          "row": "7",
+          "qty": 4,
+          "price_each": 976.0,
+          "all_in": 1239.52,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "95f950f6beed"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "104",
           "row": "38",
           "qty": 6,
@@ -8241,6 +8307,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "5b4645e71beb"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "104",
+          "row": "42",
+          "qty": 7,
+          "price_each": 978.0,
+          "all_in": 1242.06,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "6743dd5afa4e"
         },
         {
           "site": "Vivid Seats",
@@ -8277,14 +8354,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "250A",
-          "row": "7",
-          "qty": 4,
-          "price_each": 992.0,
-          "all_in": 1259.84,
-          "category": "Cat 2",
+          "section": "110",
+          "row": "15",
+          "qty": 2,
+          "price_each": 997.0,
+          "all_in": 1266.19,
+          "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "0e6cf4aad3b2"
+          "fingerprint": "8a21216ec409"
         },
         {
           "site": "Vivid Seats",
@@ -8607,6 +8684,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "219",
+          "row": "2",
+          "qty": 8,
+          "price_each": 1094.0,
+          "all_in": 1389.38,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "5906a8ac6440"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "123",
           "row": "19",
           "qty": 2,
@@ -8736,6 +8824,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "282997a030fa"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "244",
+          "row": "2",
+          "qty": 8,
+          "price_each": 1178.0,
+          "all_in": 1496.06,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "d0d9e596a921"
         },
         {
           "site": "Vivid Seats",
@@ -8904,6 +9003,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "148",
+          "row": "23",
+          "qty": 4,
+          "price_each": 1295.0,
+          "all_in": 1644.65,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "e3b4912e6438"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "121",
           "row": "22",
           "qty": 2,
@@ -8928,12 +9038,12 @@
           "site": "Vivid Seats",
           "section": "110",
           "row": "16",
-          "qty": 4,
+          "qty": 3,
           "price_each": 1326.0,
           "all_in": 1684.02,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "7a70d2ef99c4"
+          "fingerprint": "5509b81754b8"
         },
         {
           "site": "Vivid Seats",
@@ -8945,6 +9055,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
           "fingerprint": "ffa4a9805126"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "126",
+          "row": "34",
+          "qty": 8,
+          "price_each": 1334.0,
+          "all_in": 1694.18,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "773c0feabc27"
         },
         {
           "site": "Vivid Seats",
@@ -8981,6 +9102,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "104",
+          "row": "12",
+          "qty": 3,
+          "price_each": 1373.0,
+          "all_in": 1743.71,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "1449eed8d21d"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "117",
           "row": "22",
           "qty": 3,
@@ -9014,17 +9146,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "104",
-          "row": "12",
-          "qty": 3,
-          "price_each": 1402.0,
-          "all_in": 1780.54,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "db8965be7074"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "144",
           "row": "31",
           "qty": 4,
@@ -9050,44 +9171,11 @@
           "section": "249A",
           "row": "12",
           "qty": 4,
-          "price_each": 1463.0,
-          "all_in": 1858.01,
+          "price_each": 1473.0,
+          "all_in": 1870.71,
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "f4e60600c03d"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "202A",
-          "row": "8",
-          "qty": 4,
-          "price_each": 1463.0,
-          "all_in": 1858.01,
-          "category": "Cat 2",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "27c8e2ee0bec"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "110",
-          "row": "15",
-          "qty": 2,
-          "price_each": 1484.0,
-          "all_in": 1884.68,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "75d3a4d99a9c"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "126",
-          "row": "34",
-          "qty": 8,
-          "price_each": 1500.0,
-          "all_in": 1905.0,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "3ae49bb82e33"
+          "fingerprint": "38b08a899aab"
         },
         {
           "site": "Vivid Seats",
@@ -9168,6 +9256,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "110",
+          "row": "16",
+          "qty": 4,
+          "price_each": 1624.0,
+          "all_in": 2062.48,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "e1e32151e275"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "104",
           "row": "45",
           "qty": 2,
@@ -9204,33 +9303,33 @@
           "section": "116",
           "row": "10",
           "qty": 4,
-          "price_each": 1685.0,
-          "all_in": 2139.95,
+          "price_each": 1683.0,
+          "all_in": 2137.41,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "4872ea044b5e"
+          "fingerprint": "3c0a70d402ef"
         },
         {
           "site": "Vivid Seats",
           "section": "110",
           "row": "14",
           "qty": 4,
-          "price_each": 1685.0,
-          "all_in": 2139.95,
+          "price_each": 1683.0,
+          "all_in": 2137.41,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "205f89a51def"
+          "fingerprint": "f71c2dc2f402"
         },
         {
           "site": "Vivid Seats",
           "section": "110",
           "row": "8",
           "qty": 2,
-          "price_each": 1686.0,
-          "all_in": 2141.22,
+          "price_each": 1684.0,
+          "all_in": 2138.68,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "d271e9d0ced2"
+          "fingerprint": "5d6c9c5ed065"
         },
         {
           "site": "Vivid Seats",
@@ -9322,6 +9421,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "219",
+          "row": "1",
+          "qty": 2,
+          "price_each": 1742.0,
+          "all_in": 2212.34,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
+          "fingerprint": "32c7d87c5eac"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "118",
           "row": "12",
           "qty": 4,
@@ -9347,22 +9457,22 @@
           "section": "110",
           "row": "15",
           "qty": 4,
-          "price_each": 1787.0,
-          "all_in": 2269.49,
+          "price_each": 1785.0,
+          "all_in": 2266.95,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "39938c08b39d"
+          "fingerprint": "070ba0c4ceac"
         },
         {
           "site": "Vivid Seats",
           "section": "115c",
           "row": "8",
           "qty": 4,
-          "price_each": 1787.0,
-          "all_in": 2269.49,
+          "price_each": 1785.0,
+          "all_in": 2266.95,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-6-27-2026--sports-soccer/production/5080698",
-          "fingerprint": "4316d70fdd85"
+          "fingerprint": "56024d7cbf7a"
         },
         {
           "site": "Vivid Seats",
@@ -9719,7 +9829,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 838
+          "count": 836
         },
         "AXS": {
           "status": "fail",
@@ -10068,6 +10178,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "231A",
+          "row": "12",
+          "qty": 2,
+          "price_each": 1287.0,
+          "all_in": 1634.49,
+          "category": "Cat 2",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "f41e3d810145"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "247A",
           "row": "11",
           "qty": 4,
@@ -10098,28 +10219,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "fac49ec9b3bf"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "Block 146",
-          "row": "35",
-          "qty": 4,
-          "price_each": 1332.0,
-          "all_in": 1691.64,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "a3c01306832e"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "133",
-          "row": "25",
-          "qty": 2,
-          "price_each": 1333.0,
-          "all_in": 1692.91,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "b77c5822e109"
         },
         {
           "site": "Vivid Seats",
@@ -10164,6 +10263,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "23ca9a7aa922"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "Block 146",
+          "row": "35",
+          "qty": 4,
+          "price_each": 1342.0,
+          "all_in": 1704.34,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "f8f1e7777f23"
         },
         {
           "site": "Vivid Seats",
@@ -10355,17 +10465,6 @@
         {
           "site": "Vivid Seats",
           "section": "123",
-          "row": "37",
-          "qty": 4,
-          "price_each": 1415.0,
-          "all_in": 1797.05,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "b80305afab2d"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "123",
           "row": "38",
           "qty": 4,
           "price_each": 1415.0,
@@ -10373,6 +10472,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "4ec8c07fcb2e"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "123",
+          "row": "37",
+          "qty": 4,
+          "price_each": 1415.0,
+          "all_in": 1797.05,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "b80305afab2d"
         },
         {
           "site": "Vivid Seats",
@@ -10772,17 +10882,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "133",
-          "row": "13",
-          "qty": 4,
-          "price_each": 1512.0,
-          "all_in": 1920.24,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "62e53cb2b536"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "148",
           "row": "42",
           "qty": 4,
@@ -10791,6 +10890,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "f1da3f608fb2"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "133",
+          "row": "13",
+          "qty": 2,
+          "price_each": 1515.0,
+          "all_in": 1924.05,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "48d83aa72b4a"
         },
         {
           "site": "Vivid Seats",
@@ -10835,17 +10945,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "60c9fbaa351b"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "133",
-          "row": "26",
-          "qty": 4,
-          "price_each": 1525.0,
-          "all_in": 1936.75,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "6b2ea0f4953f"
         },
         {
           "site": "Vivid Seats",
@@ -11077,6 +11176,17 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "d1b4ff834bd7"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "117",
+          "row": "34",
+          "qty": 2,
+          "price_each": 1583.0,
+          "all_in": 2010.41,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "da578146d1c7"
         },
         {
           "site": "Vivid Seats",
@@ -11334,17 +11444,6 @@
         {
           "site": "Vivid Seats",
           "section": "103",
-          "row": "32",
-          "qty": 4,
-          "price_each": 1666.0,
-          "all_in": 2115.82,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "a1a5821bf13f"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "103",
           "row": "31",
           "qty": 4,
           "price_each": 1666.0,
@@ -11352,6 +11451,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "88b541be1e4d"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "103",
+          "row": "32",
+          "qty": 4,
+          "price_each": 1666.0,
+          "all_in": 2115.82,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "a1a5821bf13f"
         },
         {
           "site": "Vivid Seats",
@@ -11363,17 +11473,6 @@
           "category": "Cat 2",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "b33d1c6aaa9f"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "117",
-          "row": "34",
-          "qty": 2,
-          "price_each": 1666.0,
-          "all_in": 2115.82,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "e3bf12b24712"
         },
         {
           "site": "Vivid Seats",
@@ -11521,17 +11620,6 @@
         {
           "site": "Vivid Seats",
           "section": "106",
-          "row": "35",
-          "qty": 4,
-          "price_each": 1744.0,
-          "all_in": 2214.88,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "8e3569d95a35"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "106",
           "row": "34",
           "qty": 4,
           "price_each": 1744.0,
@@ -11550,6 +11638,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "8392a1baca39"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "106",
+          "row": "35",
+          "qty": 4,
+          "price_each": 1744.0,
+          "all_in": 2214.88,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "8e3569d95a35"
         },
         {
           "site": "Vivid Seats",
@@ -12521,6 +12620,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "133",
+          "row": "13",
+          "qty": 4,
+          "price_each": 2983.0,
+          "all_in": 3788.41,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "39fc61c984db"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "123",
           "row": "39",
           "qty": 4,
@@ -12650,17 +12760,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "4e70d0314d9a"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "149",
-          "row": "41",
-          "qty": 4,
-          "price_each": 3430.0,
-          "all_in": 4356.1,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "4175fd973628"
         },
         {
           "site": "Vivid Seats",
@@ -12804,17 +12903,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "17b1c867366b"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "126",
-          "row": "41",
-          "qty": 8,
-          "price_each": 5145.0,
-          "all_in": 6534.15,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "5390a71872ed"
         },
         {
           "site": "Vivid Seats",
@@ -12996,23 +13084,23 @@
           "site": "Vivid Seats",
           "section": "139",
           "row": "19",
-          "qty": 5,
-          "price_each": 6521.0,
-          "all_in": 8281.67,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "99c7eaf5e580"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "139",
-          "row": "19",
           "qty": 4,
           "price_each": 6521.0,
           "all_in": 8281.67,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
           "fingerprint": "f7ab5ba59811"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "139",
+          "row": "19",
+          "qty": 5,
+          "price_each": 6521.0,
+          "all_in": 8281.67,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
+          "fingerprint": "99c7eaf5e580"
         },
         {
           "site": "Vivid Seats",
@@ -13040,17 +13128,6 @@
           "site": "Vivid Seats",
           "section": "139",
           "row": "18",
-          "qty": 4,
-          "price_each": 6777.0,
-          "all_in": 8606.79,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "553e5a086a1d"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "139",
-          "row": "18",
           "qty": 5,
           "price_each": 6777.0,
           "all_in": 8606.79,
@@ -13060,14 +13137,14 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "116",
-          "row": "34",
-          "qty": 8,
-          "price_each": 6860.0,
-          "all_in": 8712.2,
+          "section": "139",
+          "row": "18",
+          "qty": 4,
+          "price_each": 6777.0,
+          "all_in": 8606.79,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-5-2026--sports-soccer/production/5080851",
-          "fingerprint": "a404c5569e72"
+          "fingerprint": "553e5a086a1d"
         },
         {
           "site": "Vivid Seats",
@@ -13178,7 +13255,7 @@
         },
         "Vivid Seats": {
           "status": "ok",
-          "count": 642
+          "count": 646
         },
         "AXS": {
           "status": "fail",
@@ -13384,17 +13461,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "148",
-          "row": "29",
-          "qty": 2,
-          "price_each": 10491.0,
-          "all_in": 13323.57,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "a22887b79595"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "104",
           "row": "22",
           "qty": 2,
@@ -13403,6 +13469,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "ef594b606c7b"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "104",
+          "row": "34",
+          "qty": 2,
+          "price_each": 10514.0,
+          "all_in": 13352.78,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "d378642e8fb8"
         },
         {
           "site": "Vivid Seats",
@@ -13491,17 +13568,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "24e369a83850"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "104",
-          "row": "34",
-          "qty": 2,
-          "price_each": 11045.0,
-          "all_in": 14027.15,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "902de2d655e1"
         },
         {
           "site": "Vivid Seats",
@@ -13794,22 +13860,22 @@
           "section": "SECTION 124",
           "row": "43",
           "qty": 2,
-          "price_each": 12625.0,
-          "all_in": 16033.75,
+          "price_each": 12616.0,
+          "all_in": 16022.32,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "15fa77bd9837"
+          "fingerprint": "9933f55683b2"
         },
         {
           "site": "Vivid Seats",
           "section": "SECTION 123",
           "row": "22",
           "qty": 2,
-          "price_each": 12625.0,
-          "all_in": 16033.75,
+          "price_each": 12616.0,
+          "all_in": 16022.32,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "9fac9d829168"
+          "fingerprint": "e9e961b09f30"
         },
         {
           "site": "Vivid Seats",
@@ -13854,6 +13920,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "bc92282d4ffd"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "148",
+          "row": "29",
+          "qty": 2,
+          "price_each": 12862.0,
+          "all_in": 16334.74,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "f24d0dfdf911"
         },
         {
           "site": "Vivid Seats",
@@ -14319,6 +14396,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "104",
+          "row": "17",
+          "qty": 2,
+          "price_each": 17000.0,
+          "all_in": 21590.0,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "6537fb9d16ae"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "131",
           "row": "20",
           "qty": 2,
@@ -14418,17 +14506,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "104",
-          "row": "17",
-          "qty": 2,
-          "price_each": 18000.0,
-          "all_in": 22860.0,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "a6c1a046a994"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "123",
           "row": "36",
           "qty": 4,
@@ -14437,6 +14514,17 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "a7584106533f"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "143",
+          "row": "25",
+          "qty": 4,
+          "price_each": 18736.0,
+          "all_in": 23794.72,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "b66ed18fe0d0"
         },
         {
           "site": "Vivid Seats",
@@ -14476,11 +14564,22 @@
           "section": "LOWER 133",
           "row": "20",
           "qty": 2,
-          "price_each": 19760.0,
-          "all_in": 25095.2,
+          "price_each": 19747.0,
+          "all_in": 25078.69,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "75068a06d90f"
+          "fingerprint": "29e1c04f6ef5"
+        },
+        {
+          "site": "Vivid Seats",
+          "section": "104",
+          "row": "8",
+          "qty": 4,
+          "price_each": 19968.0,
+          "all_in": 25359.36,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "2095907f04b0"
         },
         {
           "site": "Vivid Seats",
@@ -14495,17 +14594,6 @@
         },
         {
           "site": "Vivid Seats",
-          "section": "104",
-          "row": "8",
-          "qty": 4,
-          "price_each": 19985.0,
-          "all_in": 25380.95,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "bee320d6face"
-        },
-        {
-          "site": "Vivid Seats",
           "section": "103",
           "row": "46",
           "qty": 4,
@@ -14514,17 +14602,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "98f8b68daf01"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "143",
-          "row": "25",
-          "qty": 4,
-          "price_each": 20817.0,
-          "all_in": 26437.59,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "5f9f0e8ac54d"
         },
         {
           "site": "Vivid Seats",
@@ -14660,6 +14737,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "142",
+          "row": "21",
+          "qty": 4,
+          "price_each": 23940.0,
+          "all_in": 30403.8,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "65a88835be0b"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "143",
           "row": "25",
           "qty": 3,
@@ -14694,13 +14782,13 @@
         {
           "site": "Vivid Seats",
           "section": "142",
-          "row": "21",
-          "qty": 4,
-          "price_each": 26022.0,
-          "all_in": 33047.94,
+          "row": "10",
+          "qty": 2,
+          "price_each": 26086.0,
+          "all_in": 33129.22,
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "6c53c6959420"
+          "fingerprint": "4578af3007da"
         },
         {
           "site": "Vivid Seats",
@@ -14847,6 +14935,17 @@
         },
         {
           "site": "Vivid Seats",
+          "section": "140",
+          "row": "25",
+          "qty": 4,
+          "price_each": 34349.0,
+          "all_in": 43623.23,
+          "category": "Cat 1",
+          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
+          "fingerprint": "61a6e90895ae"
+        },
+        {
+          "site": "Vivid Seats",
           "section": "134",
           "row": "28",
           "qty": 4,
@@ -14855,17 +14954,6 @@
           "category": "Cat 1",
           "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
           "fingerprint": "2657c58e922b"
-        },
-        {
-          "site": "Vivid Seats",
-          "section": "140",
-          "row": "25",
-          "qty": 4,
-          "price_each": 39033.0,
-          "all_in": 49571.91,
-          "category": "Cat 1",
-          "url": "https://www.vividseats.com/world-cup-soccer-tickets-metlife-stadium-7-19-2026--sports-soccer/production/5080877",
-          "fingerprint": "740bb8b722a5"
         },
         {
           "site": "Vivid Seats",
